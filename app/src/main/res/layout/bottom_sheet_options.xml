@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:background="#00555555"
+    android:elevation="10dp"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="90dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/ash"
+        android:padding="8dp"
+        android:text="Choose option "
+        android:textStyle="bold"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+         android:id="@+id/link_families"
+        android:layout_marginTop="3dp"
+
+        android:padding="16dp"
+        android:text="Link families"
+        android:background="@color/ash"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Unfollow"
+        android:id="@+id/unfollow"
+        android:layout_marginTop="3dp"
+
+        android:background="@color/ash"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/txtFolders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/ash"
+
+        android:text="Folders"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/ash"
+
+
+        android:text="Opportunities"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="3dp"
+
+        android:background="@color/ash"
+        android:padding="16dp"
+        android:text="Documents"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_shape_oval"
+        android:gravity="center"
+        android:id="@+id/cancel_bottom"
+
+        android:padding="16dp"
+        android:text="Cancel"
+        android:textSize="18dp" />
+</LinearLayout>
+

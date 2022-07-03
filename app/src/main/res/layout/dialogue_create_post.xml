@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:cardBackgroundColor="#ffff"
+
+        app:cardCornerRadius="8dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/full_View"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:orientation="vertical"
+                    android:paddingRight="10dp"
+                    android:visibility="visible"
+                    android:paddingBottom="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tebal1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/editTextHorizontalMargin"
+                            android:layout_marginTop="@dimen/firstViewTopMargin"
+                            android:text="What do you want to post?"
+                            android:textColor="#170b2b"
+                            android:textStyle="bold"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/settings"
+                            android:layout_width="28dp"
+                            android:layout_height="22dp"
+                            android:layout_centerVertical="true"
+                            android:focusable="true"
+                            android:layout_toStartOf="@+id/btnDismiss"
+                            app:tint="@color/quantum_black_text"
+                            android:src="@drawable/icon_navigation_settings_white"
+                            android:visibility="visible"
+                            android:layout_marginTop="34dp"
+                            />
+                        <ImageView
+                            android:id="@+id/btnDismiss"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="18dp"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_dialogue_close"
+                            android:layout_marginTop="18dp"
+                            app:tint="@color/grey" />
+
+                    </RelativeLayout>
+
+
+                    <EditText
+                        android:id="@+id/edtxdescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:minLines="4"
+                        android:gravity="top"
+                        android:background="@drawable/round_edittext"
+                        android:inputType="textMultiLine|textCapSentences"
+                        android:padding="8dp"
+                        android:textColor="#170b2b"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/editTextHorizontalMargin"
+                        android:text="Tip: You can include #tags as well"
+                        android:layout_marginTop="8dp"
+
+                        android:textSize="11sp" />
+
+
+                    <LinearLayout
+
+                        android:id="@+id/attachment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/round_edittext"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/no_files"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="No files attached" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/img_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        >
+
+                        <RelativeLayout
+                            android:id="@+id/attachRelativeView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            >
+
+                            <LinearLayout
+                                android:id="@+id/attachView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="11dp"
+                                android:orientation="horizontal"
+                                android:visibility="invisible">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/btnImage"
+                                        android:layout_width="45dp"
+                                        android:layout_height="40dp"
+                                        android:src="@drawable/ic_photo_new" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Photo" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/btnVideo"
+                                        android:layout_width="45dp"
+                                        android:layout_height="40dp"
+                                        android:src="@drawable/ic_video_new" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Video" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/btnDocument"
+                                        android:layout_width="45dp"
+                                        android:layout_height="40dp"
+                                        android:src="@drawable/ic_document_new" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Document" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/btnAudio"
+                                        android:layout_width="45dp"
+                                        android:layout_height="40dp"
+                                        android:src="@drawable/ic_audio_new" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Audio" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                            <ImageView
+                                android:id="@+id/btnAttach"
+                                android:layout_width="25dp"
+                                android:layout_height="20dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="14dp"
+                                android:layout_marginStart="18dp"
+                                android:layout_toEndOf="@id/attachView"
+                                android:focusable="true"
+                                android:src="@drawable/attachment_black"
+                                android:visibility="visible"
+                                app:tint="@color/quantum_black_text" />
+                            <ImageView
+                                android:id="@+id/btnCamera"
+                                android:layout_width="25dp"
+                                android:layout_height="20dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="14dp"
+                                android:layout_marginStart="10dp"
+                                android:focusable="true"
+                                android:layout_toEndOf="@id/btnAttach"
+                                android:src="@drawable/camera"
+                                android:visibility="visible"
+                                app:tint="@color/quantum_black_text" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_post"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="5dp"
+                        android:backgroundTint="@color/green"
+                        android:text="Post"
+                        android:textAllCaps="false" />
+                    <RelativeLayout
+                        android:id="@+id/validation_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/black"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:id="@+id/validation_message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="Please add description or attachment"
+                            android:padding="5dp"
+                            />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/settings_View"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:orientation="vertical"
+                    android:paddingRight="10dp"
+                    android:visibility="gone"
+                    android:paddingBottom="20dp">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fullview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/new_background_rounded">
+                        <ImageView
+                            android:id="@+id/settings_back"
+                            android:layout_width="25dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginRight="8dp"
+                            android:src="@drawable/ic_return"
+                            app:layout_constraintBottom_toBottomOf="@id/postSettings"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/postSettings"
+                            app:tint="@color/grey" />
+                        <TextView
+                            android:id="@+id/postSettings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Post Settings"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@id/settings_back"
+                            app:layout_constraintTop_toTopOf="@id/fullview" />
+
+                        <ImageView
+                            android:id="@+id/btnCloseSettings"
+                            android:layout_width="25dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_dialogue_close"
+                            app:layout_constraintBottom_toBottomOf="@id/postSettings"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/postSettings"
+                            app:tint="@color/grey" />
+
+                        <TextView
+                            android:id="@+id/enable_sharing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="23dp"
+
+                            android:text="Enable sharing"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            app:layout_constraintStart_toStartOf="@+id/postSettings"
+                            app:layout_constraintTop_toBottomOf="@+id/postSettings" />
+
+                        <Switch
+                            android:id="@+id/share"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="40dp"
+                            android:checked="true"
+                            app:layout_constraintBottom_toBottomOf="@+id/enable_sharing"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/enable_sharing" />
+
+                        <TextView
+                            android:id="@+id/enable_convrstion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="26dp"
+                            android:text="Enable conversation"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            app:layout_constraintStart_toStartOf="@+id/enable_sharing"
+                            app:layout_constraintTop_toBottomOf="@+id/enable_sharing" />
+
+                        <Switch
+                            android:id="@+id/conversation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="40dp"
+                            android:checked="true"
+                            android:text="              "
+                            app:layout_constraintBottom_toBottomOf="@+id/enable_convrstion"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/enable_convrstion" />
+
+                        <TextView
+                            android:id="@+id/enable_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="28dp"
+                            android:text="Enable rating"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            app:layout_constraintStart_toStartOf="@+id/enable_convrstion"
+                            app:layout_constraintTop_toBottomOf="@+id/enable_convrstion" />
+
+                        <Switch
+                            android:id="@+id/rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="40dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/enable_rating"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/enable_rating" />
+
+                        <TextView
+                            android:id="@+id/txt_is_announcement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="28dp"
+                            android:text="Post this as announcement"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            app:layout_constraintStart_toStartOf="@+id/enable_rating"
+                            app:layout_constraintTop_toBottomOf="@+id/enable_rating" />
+
+                        <Switch
+                            android:id="@+id/is_announcement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="40dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txt_is_announcement"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txt_is_announcement" />
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/settings_done"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="42dp"
+                            android:layout_marginEnd="24dp"
+                            android:backgroundTint="@color/greenTextColor"
+                            android:text="Done"
+                            app:layout_constraintEnd_toEndOf="@+id/is_announcement"
+                            app:layout_constraintStart_toStartOf="@+id/is_announcement"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_is_announcement" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

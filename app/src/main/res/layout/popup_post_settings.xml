@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/new_background_rounded"
+    android:fitsSystemWindows="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fullview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/new_background_rounded"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/postSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="34dp"
+            android:text="Post Settings"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fullview" />
+
+        <ImageView
+            android:id="@+id/btnDismiss"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/ic_dialogue_close"
+            app:layout_constraintBottom_toBottomOf="@id/postSettings"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/postSettings"
+            app:tint="@color/grey" />
+
+        <TextView
+            android:id="@+id/enable_sharing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+
+            android:text="Enable sharing"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/postSettings"
+            app:layout_constraintTop_toBottomOf="@+id/postSettings" />
+
+        <Switch
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="@+id/enable_sharing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/enable_sharing" />
+
+        <TextView
+            android:id="@+id/enable_convrstion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="Enable conversation"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/enable_sharing"
+            app:layout_constraintTop_toBottomOf="@+id/enable_sharing" />
+
+        <Switch
+            android:id="@+id/conversation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:checked="true"
+            android:text="              "
+            app:layout_constraintBottom_toBottomOf="@+id/enable_convrstion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/enable_convrstion" />
+
+        <TextView
+            android:id="@+id/post_this_as_announmnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Post this as announcement"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/enable_convrstion"
+            app:layout_constraintTop_toBottomOf="@+id/enable_convrstion" />
+
+        <Switch
+            android:id="@+id/as_announcement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/post_this_as_announmnt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/post_this_as_announmnt" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/greenTextColor"
+            android:text="Done"
+            app:layout_constraintEnd_toEndOf="@+id/as_announcement"
+            app:layout_constraintStart_toStartOf="@+id/as_announcement"
+            app:layout_constraintTop_toBottomOf="@+id/post_this_as_announmnt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

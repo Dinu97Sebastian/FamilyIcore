@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.FamilyDashboardActivity">
+
+    <FrameLayout
+        android:id="@+id/familyDashboardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+        <include
+        android:id="@+id/included_fragments"
+        layout="@layout/layout_for_fragments_in_dashboard_menu"
+        android:visibility="gone"/>
+        <include
+        android:id="@+id/sublayout_container"
+        layout="@layout/layout_without_search_and_fab"
+        android:visibility="gone"/>
+        <include
+            android:id="@+id/settings_container"
+            layout="@layout/layout_settings_container"
+            android:visibility="gone"/>
+        <include
+        android:id="@+id/advanced_settings_container"
+        layout="@layout/layout_advanced_settings_container"
+        android:visibility="gone"/>
+    <include
+        android:id="@+id/members_subscription_container"
+        layout="@layout/layout_for_members_subscription"
+        android:visibility="gone"/>
+</LinearLayout>

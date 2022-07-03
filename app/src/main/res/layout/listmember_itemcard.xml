@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    app:cardUseCompatPadding="false"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="12dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp">
+
+        <ImageView
+            android:id="@+id/familyLogo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/avatar_male"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/userName" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="0dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Profile Name"
+            android:textColor="@color/titleColor"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/familyLogo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/locationIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="14dp"
+            android:src="@drawable/icon_location_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/familyLocation"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@+id/familyLogo"
+            app:layout_constraintTop_toTopOf="@+id/familyLocation" />
+
+        <TextView
+            android:id="@+id/familyLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Trivandrum"
+            android:textColor="@color/subTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/userName"
+            app:layout_constraintStart_toEndOf="@+id/locationIcon"
+            app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+        <TextView
+            android:id="@+id/familiesCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="5K"
+            android:textColor="@color/greenTextColor"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/familyLogo"
+            app:layout_constraintTop_toBottomOf="@+id/addToFamily" />
+
+        <TextView
+            android:id="@+id/labelFamiliesCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="members"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/familiesCount"
+            app:layout_constraintStart_toEndOf="@+id/familiesCount"
+            app:layout_constraintTop_toTopOf="@+id/familiesCount" />
+
+        <TextView
+            android:id="@+id/membersCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="12"
+            android:textColor="@color/greenTextColor"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/familiesCount"
+            app:layout_constraintStart_toEndOf="@+id/labelFamiliesCount"
+            app:layout_constraintTop_toTopOf="@+id/familiesCount" />
+
+        <TextView
+            android:id="@+id/labelMembersCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text=" since"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/familiesCount"
+            app:layout_constraintStart_toEndOf="@+id/membersCount"
+            app:layout_constraintTop_toTopOf="@+id/familiesCount" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addToFamily"
+            style="@style/greenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/addToFamily"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/userName"
+            app:layout_constraintTop_toBottomOf="@+id/locationIcon" />
+
+        <ProgressBar
+            android:id="@+id/progressBar4"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/addToFamily"
+            app:layout_constraintEnd_toEndOf="@+id/addToFamily"
+            app:layout_constraintStart_toStartOf="@+id/addToFamily"
+            app:layout_constraintTop_toTopOf="@+id/addToFamily" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

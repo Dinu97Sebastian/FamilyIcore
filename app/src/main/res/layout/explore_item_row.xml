@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="2dp"
+    android:layout_marginTop="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_ticketed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:padding="4dp"
+            android:visibility="invisible"
+            app:cardBackgroundColor="@color/ticketed_color"
+            app:cardCornerRadius="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView7">
+
+            <TextView
+                android:id="@+id/ticketed"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="Ticketed"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Angela Chinwezw"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewUser"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewUser"
+            android:transitionName="profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/avatar_male"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="14:20 PM"
+            android:textColor="@color/greymedium"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/txtName"
+            app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintDimensionRatio="4:3"
+            app:layout_constraintEnd_toEndOf="@id/share"
+            app:layout_constraintStart_toStartOf="@+id/imageViewUser"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewUser">
+
+            <ImageView
+                android:id="@+id/roundedImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:foreground="@drawable/image_gradient_background"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_event_image" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:elevation="2dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView7">
+
+            <TextView
+                android:id="@+id/txt_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:textColor="@color/white"
+                android:text="Event type"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/bg_round" />
+
+            <TextView
+                android:id="@+id/txt_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Sign up"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"
+                android:id="@+id/isRecurring_dot"
+                android:background="@drawable/bg_round" />
+
+            <TextView
+                android:id="@+id/txt_isRecurring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Recurring Event"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"
+                android:id="@+id/event_type_dot"
+                android:background="@drawable/bg_round" />
+
+            <TextView
+                android:id="@+id/txt_event_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="daily"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/shareuser"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:padding="6dp"
+            android:scaleType="fitXY"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/share"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_shares" />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="0dp"
+            android:padding="6dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_share1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:background="@drawable/corner_grey"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="14dp"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView7"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle">
+
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="Date"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/month"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Dec" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Reunion 2020"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView7" />
+
+        <ImageView
+            android:id="@+id/timeicon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:padding="2dp"
+            android:layout_marginLeft="14dp"
+            android:src="@drawable/ic_access_time_black_24dp"
+            app:tint="@color/greymedium"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="@+id/time" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/timeicon"
+            android:layout_marginLeft="4dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="11:00 am - 3:00 pm"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="12dp"
+            android:firstBaselineToTopHeight="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/timeicon"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+        <TextView
+            android:id="@+id/txtOccurrence"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Occurence : "
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            android:layout_marginTop="6dp"
+            android:firstBaselineToTopHeight="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/timeicon"
+            app:layout_constraintTop_toBottomOf="@+id/time" />
+
+        <ImageView
+            android:id="@+id/venuicon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_event_location"
+            android:backgroundTint="@color/greymedium"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLocation"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@+id/timeicon"
+            app:layout_constraintTop_toTopOf="@+id/txtLocation" />
+
+        <ImageView
+            android:id="@+id/meetingIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:backgroundTint="@color/greymedium"
+            android:paddingBottom="2.5dp"
+            android:src="@drawable/cursor_icon"
+            android:scaleType="centerCrop"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLocation"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@+id/timeicon"
+            app:layout_constraintTop_toTopOf="@+id/txtLocation"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/txtLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Hotel Fairmont, Dallas TX"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/greymedium"
+            android:textSize="12sp"
+            android:firstBaselineToTopHeight="18dp"
+            app:layout_constraintEnd_toEndOf="@+id/time"
+            app:layout_constraintStart_toEndOf="@+id/venuicon"
+            app:layout_constraintTop_toBottomOf="@+id/txtOccurrence" />
+
+        <com.luseen.autolinklibrary.AutoLinkTextView
+            android:id="@+id/meetingLink"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Hotel Fairmont, Dallas TXHotel Fairmont, Dallas TXHotel Fairmont, Dallas TXHotel Fairmont, Dallas TXHotel Fairmont, Dallas TXHotel Fairmont, Dallas TXHotel Fairmont, Dallas TX"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/greymedium"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/time"
+            app:layout_constraintStart_toEndOf="@+id/venuicon"
+            app:layout_constraintTop_toBottomOf="@+id/txtOccurrence" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/corner_grey"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            tools:layout_editor_absoluteX="16dp">
+
+        </View>
+
+        <LinearLayout
+            android:id="@+id/bottom_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/view1">
+
+            <TextView
+                android:id="@+id/going_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="2 Going    | "
+                android:textColor="@color/greymedium"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/interested_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="8dp"
+                android:text="5 Interested"
+                android:layout_marginBottom="0dp"
+                android:textColor="@color/greymedium"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txt_join"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="Alice and 3 others are going"
+                android:layout_marginEnd="0dp"
+                android:gravity="right"
+                android:textColor="@color/greymedium"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

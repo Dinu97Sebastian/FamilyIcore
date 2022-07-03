@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:clickable="true"
+    tools:context=".Fragments.SimilarFamiliesFragment">
+
+    <TextView
+        android:id="@+id/labelHeadline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="The following families with similar names already exist. You might want to check these families and join them instead of creating new one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/similarFamilyList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/labelFooter"
+        app:layout_constraintEnd_toEndOf="@+id/labelHeadline"
+        app:layout_constraintStart_toStartOf="@+id/labelHeadline"
+        app:layout_constraintTop_toBottomOf="@+id/labelHeadline"
+        tools:listitem="@layout/item_family_joining" />
+
+    <TextView
+        android:id="@+id/labelFooter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="If you are not part of any of the families above \nTouch to add a new family"
+        app:layout_constraintBottom_toTopOf="@+id/addNewFamily"
+        app:layout_constraintEnd_toEndOf="@+id/similarFamilyList"
+        app:layout_constraintStart_toStartOf="@+id/similarFamilyList" />
+
+    <Button
+        android:id="@+id/addNewFamily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Add new family"
+        android:textAllCaps="false"
+        android:tag="new"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

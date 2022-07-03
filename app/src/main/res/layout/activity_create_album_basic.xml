@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context=".Activities.CreateAlbumBasicActivity">
+
+    <include
+        android:id="@+id/layoutIncluder"
+        layout="@layout/item_toolbar_normal_no_notif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelName"
+        style="@style/CustomTextViewForLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/editTextHorizontalMargin"
+        android:layout_marginTop="@dimen/firstViewTopMargin"
+        android:text="@string/album_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutIncluder" />
+
+    <TextView
+        android:id="@+id/textView47"
+        style="@style/CustomTextViewForLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/editTextVerticalMargin"
+        android:text="Description"
+        app:layout_constraintStart_toStartOf="@+id/labelName"
+        app:layout_constraintTop_toBottomOf="@+id/album_name" />
+
+    <EditText
+        android:id="@+id/album_name"
+        style="@style/CustomEditTextForLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/editTextHorizontalMargin"
+        android:ems="10"
+        android:hint=""
+        android:maxLength="100"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelName"
+        app:layout_constraintTop_toBottomOf="@+id/labelName" />
+
+    <EditText
+        android:id="@+id/album_description"
+        style="@style/CustomEditTextForLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="text|textMultiLine"
+        android:lines="6"
+        android:maxLength="250"
+        android:minHeight="150dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/album_name"
+        app:layout_constraintStart_toStartOf="@+id/album_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView47" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/star"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/labelName"
+        app:layout_constraintStart_toEndOf="@+id/labelName"
+        app:layout_constraintTop_toTopOf="@+id/labelName" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_album"
+        style="@style/CustomButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/add_album"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:targetApi="lollipop" />
+
+    <TextView
+        android:id="@+id/labelWhoCanViewAlbums"
+        style="@style/CustomTextViewForLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Who can see this album ?"
+        app:layout_constraintStart_toStartOf="@+id/album_description"
+        app:layout_constraintTop_toBottomOf="@+id/album_description" />
+
+    <com.familheey.app.CustomViews.FSpinner
+        android:id="@+id/whoCanViewAlbums"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/album_description"
+        app:layout_constraintStart_toStartOf="@+id/album_description"
+        app:layout_constraintTop_toBottomOf="@+id/labelWhoCanViewAlbums" />
+
+    <ProgressBar
+        android:id="@+id/progressBar5"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:indeterminateTint="@color/buttoncolor"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/add_album"
+        app:layout_constraintStart_toStartOf="@+id/add_album"
+        app:layout_constraintTop_toTopOf="@+id/add_album" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

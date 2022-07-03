@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="0dp"
+    android:layout_marginTop="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/requesterImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/avatar_male"
+        app:layout_constraintBottom_toBottomOf="@+id/reject"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/requestMessage" />
+
+    <TextView
+        android:id="@+id/requestMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:lines="2"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:text="User has requested to join this group ! Accept invitation ?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/requesterImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/accept"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Accept"
+            android:textAllCaps="false"
+            android:background="@color/greenTextColor"
+            android:textColor="@color/white"
+            app:cornerRadius="5dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/reject"
+            app:layout_constraintStart_toEndOf="@+id/requesterImage"
+            app:layout_constraintTop_toTopOf="@+id/reject" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:id="@+id/reject"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:background="@color/greenTextColor"
+            android:text="Reject"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:theme="@style/Theme.MaterialComponents"
+            app:cornerRadius="5dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/greenTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/accept"
+            app:layout_constraintTop_toBottomOf="@+id/requestMessage" />
+
+        <!--<ImageView
+            android:id="@+id/accept"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/success"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/reject"
+            app:layout_constraintEnd_toStartOf="@+id/reject"
+            app:layout_constraintStart_toEndOf="@+id/requesterImage"
+            app:layout_constraintTop_toTopOf="@+id/reject" />
+
+        <ImageView
+            android:id="@+id/reject"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/error"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/accept"
+            app:layout_constraintTop_toBottomOf="@+id/requestMessage" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="membership.AddMembershipTypeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FAFBFC">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fullview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".Post.CreatePostActivity">
+
+            <ImageView
+                android:id="@+id/tempimageview"
+                android:layout_width="3dp"
+                android:layout_height="3dp"
+                android:contentDescription="@null"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/goBack"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/toolbarBackButtonPadding"
+                        android:src="@drawable/ic_return"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="h,1:1"
+                        app:layout_constraintStart_toStartOf="@+id/toolBarTitle"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/toolBarTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_name"
+                        android:gravity="center"
+                        android:scaleType="centerInside"
+                        android:text="@string/add_membership_type"
+                        android:textColor="#343a40"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <TextView
+                android:id="@+id/post_this"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/membership_type"
+                android:textColor="@color/black80"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/toolbar"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+            <TextView
+                android:id="@+id/postThisToMandatoryIndication"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/star"
+                android:textColor="#D21204"
+                app:layout_constraintStart_toEndOf="@+id/post_this"
+                app:layout_constraintTop_toTopOf="@+id/post_this" />
+
+            <EditText
+                android:id="@+id/ext_mtype"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_parent_rounded_corner"
+                android:inputType="textCapSentences|textPersonName"
+                android:maxLength="60"
+                android:paddingStart="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/post_this"
+                app:layout_constraintTop_toBottomOf="@+id/post_this" />
+
+            <TextView
+                android:id="@+id/txt_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-1dp"
+                android:textColor="@color/black80"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/ext_mtype"
+                app:layout_constraintTop_toBottomOf="@+id/ext_mtype" />
+
+            <TextView
+                android:id="@+id/what_to_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/period_type"
+                android:textColor="@color/black80"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/ext_mtype"
+                app:layout_constraintTop_toBottomOf="@+id/ext_mtype" />
+
+            <com.familheey.app.CustomViews.FSpinner
+                android:id="@+id/spinner_period"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_parent_rounded_corner"
+                app:layout_constraintEnd_toEndOf="@+id/ext_mtype"
+                app:layout_constraintStart_toStartOf="@+id/what_to_post"
+                app:layout_constraintTop_toBottomOf="@+id/what_to_post" />
+
+
+            <TextView
+                android:id="@+id/post_photo_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/fees"
+                android:textColor="@color/black80"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/spinner_period"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_period" />
+
+            <EditText
+
+                android:id="@+id/etxt_fees"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_edittext"
+                android:gravity="center_vertical"
+                android:inputType="number"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="@+id/post_photo_video"
+                app:layout_constraintTop_toBottomOf="@+id/post_photo_video">
+
+            </EditText>
+
+
+            <TextView
+                android:id="@+id/enable_sharing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Active"
+                android:textColor="@color/black80"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/etxt_fees"
+                app:layout_constraintTop_toBottomOf="@+id/etxt_fees" />
+
+            <Switch
+                android:id="@+id/active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:checked="true"
+                app:layout_constraintBottom_toBottomOf="@+id/enable_sharing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/enable_sharing" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:backgroundTint="@color/buttoncolor"
+                android:text="Save Changes"
+                app:layout_constraintEnd_toEndOf="@+id/active"
+                app:layout_constraintStart_toStartOf="@+id/conversation"
+                app:layout_constraintTop_toBottomOf="@+id/active" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

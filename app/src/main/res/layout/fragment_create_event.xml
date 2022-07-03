@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FAFBFC">
+
+    <include
+        android:id="@+id/toolbarContainer"
+        layout="@layout/item_toolbar_normal_no_notif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#FAFBFC"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarContainer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/event_name"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_edittext"
+                android:ems="10"
+                android:imeOptions="actionDone"
+                android:inputType="textCapSentences"
+                android:paddingStart="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+            <Spinner
+                android:id="@+id/spinnerEvent"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/round_edittext"
+                android:paddingStart="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/event_name"
+                app:layout_constraintStart_toStartOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Event Name"
+                android:textColor="@color/black80"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="1dp"
+                android:text="*"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView9"
+                app:layout_constraintStart_toEndOf="@+id/textView9"
+                app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Event Type"
+                android:textColor="@color/black80"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/event_name"
+                app:layout_constraintTop_toBottomOf="@+id/event_name" />
+
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Category"
+                android:textColor="@color/black80"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/spinnerEvent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerEvent" />
+
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="1dp"
+                android:text="*"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/textView11"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerEvent" />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="1dp"
+                android:text="*"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/event_name" />
+
+            <Spinner
+                android:id="@+id/event_category"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/round_edittext"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:paddingStart="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/spinnerEvent"
+                app:layout_constraintStart_toStartOf="@+id/textView11"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+            <TextView
+                android:id="@+id/txtRecurringEvents"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Recurring Events"
+                android:paddingLeft="1dp"
+                android:textColor="@color/disabled_textview_event_creation"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/event_category">
+
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.444"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtRecurringEvents">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/recurrence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="8dp"
+                        android:text="Recurrence"
+                        android:textColor="@color/black80"
+                        android:textSize="16sp"
+                        android:visibility="visible" />
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="1dp"
+                        android:text="*"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/red"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spinnerRecurrence"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/round_edittext"
+                    android:paddingStart="10dp"
+                    android:visibility="visible" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/txtRecurrenceCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Occurrence"
+                    android:textColor="@color/disabled_textview_event_creation"
+                    android:textSize="16sp"
+                    android:visibility="visible">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="1dp"
+                    android:text="*"
+                    android:layout_marginTop="7dp"
+                    android:textColor="@color/red"
+                    android:textSize="16sp" />
+            </LinearLayout>
+                <EditText
+                    android:id="@+id/recurrence_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/round_edittext"
+                    android:paddingStart="10dp"
+                    android:inputType="number"
+                    android:textColor="@color/normalEditTextTextColor"
+                    android:textSize="@dimen/normalEditTextSize"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtMakeYourEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Make your event private"
+                android:textColor="@color/disabled_textview_event_creation"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/event_category"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Allow guest to invite others"
+                android:textColor="@color/disabled_textview_event_creation"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/txtMakeYourEvent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMakeYourEvent">
+
+            </TextView>
+
+            <Switch
+                android:id="@+id/allowGuestToInviteOthers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:checked="false"
+                app:layout_constraintBottom_toBottomOf="@+id/textView8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView8">
+
+            </Switch>
+
+
+            <Switch
+                android:id="@+id/makeYourEventPrivate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtMakeYourEvent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtMakeYourEvent" />
+
+            <Switch
+                android:id="@+id/recurringEvents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/txtRecurringEvents"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtRecurringEvents" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/event_category"
+                app:layout_constraintEnd_toEndOf="@+id/event_category"
+                app:layout_constraintTop_toTopOf="@+id/event_category" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Allow guests to bring people"
+                android:textColor="@color/disabled_textview_event_creation"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <Switch
+                android:id="@+id/allowGuestToBringPeople"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView33"
+                app:layout_constraintEnd_toEndOf="@+id/allowGuestToInviteOthers"
+                app:layout_constraintTop_toTopOf="@+id/textView33" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="58dp"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/allowGuestToBringPeople"
+                app:layout_constraintTop_toBottomOf="@+id/textView33">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonContinue"
+                    style="@style/CustomButtonWithNextIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center"
+                    android:text="Continue"
+                    android:textAllCaps="false"
+                    android:textColor="#FFF" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

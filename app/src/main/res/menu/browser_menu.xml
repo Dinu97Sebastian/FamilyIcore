@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/copylink"
+        android:title="Copy link" />
+    <item
+        android:id="@+id/openinchrome"
+        android:title="Open in chrome" />
+
+    <item
+        android:id="@+id/share_external"
+        android:title="Share external" />
+    <item
+        android:id="@+id/share_inside"
+        android:title="Share inside Familheey" />
+</menu>
+
+
+
+

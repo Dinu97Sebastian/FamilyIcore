@@ -1,0 +1,40 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="sync2"
+            app:title="@string/sync_title2" />
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="sync1"
+            app:title="@string/sync_title1" />
+
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="sync3"
+            app:title="@string/sync_title3" />
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="sync4"
+            app:title="@string/sync_title4" />
+
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="sync5"
+            app:title="@string/sync_title5" />
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

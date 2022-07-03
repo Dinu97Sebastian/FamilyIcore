@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context="com.familheey.app.Need.NeedRequestDetailedActivity">
+
+    <ImageView
+        android:id="@+id/userProfileImage"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/platinum"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:background="@color/platinum"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/userProfileImage"
+        app:layout_constraintTop_toTopOf="@+id/userProfileImage" />
+
+    <TextView
+        android:id="@+id/postedIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:background="@color/platinum"
+        android:textColor="@color/quantum_grey"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/postedTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/platinum"
+        android:textColor="@color/greymedium"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/postedIn"
+        app:layout_constraintStart_toStartOf="@+id/postedIn"
+        app:layout_constraintTop_toBottomOf="@+id/postedIn" />
+
+    <ImageView
+        android:id="@+id/requestedTimeIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:padding="3dp"
+        android:background="@color/platinum"
+        app:layout_constraintStart_toStartOf="@+id/userProfileImage"
+        app:layout_constraintTop_toBottomOf="@+id/postedTime" />
+
+    <TextView
+        android:id="@+id/requestedTime"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:drawableTint="@color/black"
+        android:background="@color/platinum"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/requestedTimeIcon"
+        app:layout_constraintEnd_toEndOf="@+id/postedTime"
+        app:layout_constraintStart_toEndOf="@+id/requestedTimeIcon" />
+
+    <ImageView
+        android:id="@+id/requestedLocationIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:drawableTint="@color/quantum_grey500"
+        android:padding="3dp"
+        android:background="@color/platinum"
+        app:layout_constraintStart_toStartOf="@+id/requestedTimeIcon"
+        app:layout_constraintTop_toBottomOf="@+id/requestedTimeIcon" />
+
+    <TextView
+        android:id="@+id/requestedLocation"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:drawableTint="@color/black"
+        android:background="@color/platinum"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/requestedLocationIcon"
+        app:layout_constraintEnd_toEndOf="@+id/requestedTime"
+        app:layout_constraintStart_toStartOf="@+id/requestedTime" />
+
+    <LinearLayout
+        android:id="@+id/needsList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/requestedLocation"
+        android:orientation="vertical">
+        <include
+            layout="@layout/item_need_detail_shimmer"/>
+        <include
+            layout="@layout/item_need_detail_shimmer"/>
+        <include
+            layout="@layout/item_need_detail_shimmer"/>
+    </LinearLayout>
+
+    <include
+        layout="@layout/item_need_pledge_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        layout="@layout/item_need_contribution_pledged"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

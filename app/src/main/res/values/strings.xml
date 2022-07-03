@@ -1,0 +1,133 @@
+<resources>
+    <string name="app_name">Familheey</string>
+    <string name="transition_fab" translatable="false">transition_fab</string>
+    <string name="transition_root" translatable="false">transition_root</string>
+    <string name="transition_image" translatable="false">transition_image</string>
+    <string name="transition_bar" translatable="false">transition_bar</string>
+    <string name="serverNotAvailable">Server not available</string>
+    <string name="notAvailable">Version not available</string>
+    <string name="internetNotAvailable">Please chec internet connectivity</string>
+    <string name="server_client_id">AIzaSyAPkkgVI7RdEsOqbCVDRBrReIRKM6wGryE</string>
+    <string name="facebook_app_id">530093641060661</string>
+    <string name="google_map_v2_api_key">AIzaSyCY7ATYsEBgH4LFYwPmxngMbBm2smQ7bL8</string>
+    <string name="sitekey">6LfVwh8eAAAAAK1Lwx-zLbWaoH0ejZtMh1f4kFQ7</string>
+    <string name="fb_login_protocol_scheme">fb530093641060661</string>
+    <string name="discover">Discover</string>
+    <string name="search">Search</string>
+    <string name="suggested">Suggested</string>
+    <string name="hint">hint</string>
+    <string name="join">Join</string>
+    <string name="due_amount_zero">Due Amount : 0</string>
+    <string name="press_again_to_exit">Press again to exit!</string>
+    <string name="tick_mark">\u2713</string>
+    <string name="add_to_family">Add to family</string>
+    <string name="tickMark">\u2713</string>
+    <string name="no_request_found_for_this_family">No request found for this family</string>
+    <string name="un_follow">Unfollow</string>
+    <string name="follow">Follow</string>
+    <string name="input_your_mobile_number_to_proceed_further">Enter your mobile number to proceed further.</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="enter">Enter</string>
+    <string name="terms">You must verify your phone number to create a Familheey account.\n\nBy tapping \'Continue\', you agree to Familheey\'s terms and conditions and privacy policy.</string>
+    <string name="terms1_5">By tapping \'Continue\' you agree to Familheey \nterms and conditions and privacy policy.</string>
+    <string name="continu">Continue</string>
+    <string name="family_name">Family name</string>
+    <string name="addToFamily">Add to family</string>
+    <string name="update">Update</string>
+    <string name="haven_t_created_albums_yet">Haven\'t created any albums, yet?</string>
+    <string name="haven_t_created_documents_yet">Haven\'t created documents, yet?</string>
+    <string name="create_album">Create Album</string>
+    <string name="album_name">Album Name</string>
+    <string name="add_album">Add Album</string>
+    <string name="make_album_cover">Make Album Cover</string>
+    <string name="delete_this_image">Delete this image</string>
+    <string name="share_this_image">Share this image</string>
+    <string name="default_notification_channel_id">familheey</string>
+    <string name="date_validation_message">Start date must be less than end date</string>
+    <string name="locationUpdated">Location Updated</string>
+    <string name="no_location_detected">
+        No location detected. Make sure location is enabled on the device.
+    </string>
+    <string name="permission_rationale">Location permission is needed for core functionality</string>
+    <string name="permission_denied_explanation">Permission was denied, but is needed for core
+        functionality.</string>
+    <string name="settings">Settings</string>
+
+    <string name="error_msg_unknown">An unexpected error occurred</string>
+    <string name="internal_storage">Internal storage</string>
+    <string name="error_gif">x or y bound size should be at least %1$dpx and file size should be no more than %2$sM</string>
+    <string name="title_activity_create_request">CreateRequestActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="agora_app_id">c029a6077bec43ec8a75c9c3ea7071ce</string>
+    <string name="title_activity_add_membership">AddMembershipActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="add_membership_type">Add Membership Type</string>
+    <string name="membership_type">Membership Type</string>
+    <string name="star">*</string>
+    <string name="period_type">Subscription duration</string>
+    <string name="fees">Subscription fees</string>
+    <string name="content_description"> </string>
+
+    <!-- STRIPE  PACKAGE-->
+    <string name="please_select_a_card">Please select a card or add a new card</string>
+    <string name="do_you_wish_to_cancel_the_payment">Do you wish to cancel the payment ?</string>
+    <string name="do_you_wish_to_delete_the_card">Do you wish to delete the card ?</string>
+    <string name="there_was_an_issue_deleting_saved_card_Please_try_again">There was an issue deleting saved card. Please try again.</string>
+    <string name="add_another_card">&#160;Add another card</string>
+    <string name="add_a_payment_method">&#160;Add a payment method</string>
+    <string name="there_was_an_issue_completing_the_payment">There was an issue completing the payment.\nReason: </string>
+    <string name="payments">Payment</string>
+    <string name="payment_method">&#160;Payment method</string>
+    <string name="remember_card">Remember Card</string>
+    <string name="dash">.... .... ....</string>
+    <string name="title_activity_payment_history">My Payments</string>
+    <string name="tab_text_1">MEMBERSHIP</string>
+    <string name="tab_text_2">FUND REQUEST</string>
+    <string name="title_activity_family">FamilyActivity</string>
+    <string name="title_activity_discover">DiscoverActivity</string>
+    <string name="title_activity_notification_settings">Notification Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header"> </string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <string name="sync_title">Public </string>
+    <string name="sync_title1">Direct conversation</string>
+    <string name="sync_title2">All </string>
+    <string name="sync_title3">Selected families</string>
+    <string name="sync_title4">Announcements</string>
+    <string name="sync_title5">Event </string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="chat_hint"><font size="12">Say something</font></string>
+    <string name="slider1_discription">\"Create\" your own family or you can \"Join\" \n other families</string>
+    <string name="slider2_1_discription">Familheey connects you with your personal, professional &amp; social networks, all in one place</string>
+    <string name="slider2_2_discription">You can do this by starting your own family group now</string>
+    <string name="slider3_discription">Find communities that you can be part of</string>
+    <string name="disclaimer">Disclaimer: The Familheey app collects information solely for your improved user experience and does not sell any information to any other companies.</string>
+    <!-- strings used in options menu -->
+    <string name="fragment_dashboard_menu_announcements">Announcements</string>
+    <string name="fragment_dashboard_menu_members">Members</string>
+    <string name="fragment_dashboard_menu_linkedFamilies">Linked Families</string>
+    <string name="fragment_dashboard_menu_documents">Documents</string>
+    <string name="fragment_dashboard_menu_gallery">Gallery</string>
+    <string name="fragment_dashboard_menu_aboutUs">About Us</string>
+    <string name="fragment_dashboard_menu_settings">Settings</string>
+    <string name="fragment_dashboard_menu_membership">Membership</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

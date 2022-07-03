@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="membership.AddMembershipTypeActivity">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fullview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/tempimageview"
+            android:layout_width="3dp"
+            android:layout_height="3dp"
+            android:contentDescription="@null"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/goBack"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="@string/app_name"
+                    android:padding="@dimen/toolbarBackButtonPadding"
+                    android:src="@drawable/ic_return"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="h,1:1"
+                    app:layout_constraintStart_toStartOf="@+id/toolBarTitle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/toolBarTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:gravity="center"
+                    android:scaleType="centerInside"
+                    android:text="@string/add_membership_type"
+                    android:textColor="#343a40"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <TextView
+            android:id="@+id/post_this"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/membership_type"
+            android:textColor="@color/black80"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/postThisToMandatoryIndication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/star"
+            android:textColor="#D21204"
+            app:layout_constraintStart_toEndOf="@+id/post_this"
+            app:layout_constraintTop_toTopOf="@+id/post_this" />
+
+        <com.familheey.app.CustomViews.FSpinner
+            android:id="@+id/spinner_mtype"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="6dp"
+            android:inputType="textCapSentences|textPersonName"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:paddingStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/post_this"
+            app:layout_constraintTop_toBottomOf="@+id/post_this" />
+
+        <TextView
+            android:id="@+id/txt_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-1dp"
+            android:textColor="@color/black80"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/spinner_mtype"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_mtype" />
+
+        <TextView
+            android:id="@+id/what_to_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Duration"
+            android:textColor="@color/black80"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/spinner_mtype"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_mtype" />
+
+        <com.familheey.app.CustomViews.FSpinner
+            android:id="@+id/spinner_period"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/bg_parent_rounded_corner"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_mtype"
+            app:layout_constraintStart_toStartOf="@+id/what_to_post"
+            app:layout_constraintTop_toBottomOf="@+id/what_to_post" />
+
+
+        <TextView
+            android:id="@+id/txt_from_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="From"
+            android:textColor="@color/black80"
+            android:textSize="16sp"
+
+            app:layout_constraintStart_toStartOf="@+id/spinner_period"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_period" />
+
+        <RelativeLayout
+            android:id="@+id/view_from_date"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/round_edittext"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_period"
+            app:layout_constraintStart_toStartOf="@+id/spinner_period"
+            app:layout_constraintTop_toBottomOf="@+id/txt_from_date">
+
+            <TextView
+                android:id="@+id/txt_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp" />
+
+            <ImageView
+                android:id="@+id/btn_from_calender"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="3dp"
+                android:padding="12dp"
+                android:src="@drawable/icon_calendar" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/txt_to_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="To"
+            android:textColor="@color/black80"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/view_from_date"
+            app:layout_constraintTop_toBottomOf="@+id/view_from_date" />
+
+        <RelativeLayout
+            android:id="@+id/view_to_date"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/round_edittext"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_period"
+            app:layout_constraintStart_toStartOf="@+id/spinner_period"
+            app:layout_constraintTop_toBottomOf="@+id/txt_to_date">
+
+            <TextView
+                android:id="@+id/txt_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp" />
+
+            <ImageView
+                android:id="@+id/btn_to_calender"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="3dp"
+                android:padding="12dp"
+                android:src="@drawable/icon_calendar"
+                android:visibility="gone" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/post_photo_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Payment Status"
+            android:textColor="@color/black80"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/view_to_date"
+            app:layout_constraintTop_toBottomOf="@+id/view_to_date" />
+
+
+        <com.familheey.app.CustomViews.FSpinner
+            android:id="@+id/payment_status"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/round_edittext"
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="@+id/post_photo_video"
+            app:layout_constraintTop_toBottomOf="@+id/post_photo_video">
+
+        </com.familheey.app.CustomViews.FSpinner>
+
+
+        <TextView
+            android:id="@+id/enable_sharing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Membership Fee"
+            android:textColor="@color/black80"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/payment_status"
+            app:layout_constraintTop_toBottomOf="@+id/payment_status" />
+
+
+        <EditText
+            android:id="@+id/etxt_paid_amount"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:ems="10"
+            android:focusable="true"
+            android:inputType="number"
+            android:paddingStart="10dp"
+            android:background="@drawable/round_edittext"
+            app:layout_constraintEnd_toEndOf="@+id/payment_status"
+            app:layout_constraintStart_toStartOf="@+id/enable_sharing"
+            app:layout_constraintTop_toBottomOf="@+id/enable_sharing" />
+
+        <TextView
+            android:id="@+id/txt_due"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:textColor="@color/black80"
+            app:layout_constraintStart_toStartOf="@+id/etxt_paid_amount"
+            app:layout_constraintTop_toBottomOf="@+id/etxt_paid_amount" />
+
+
+        <TextView
+            android:id="@+id/textView46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Notes to Members"
+            android:textSize="16sp"
+            android:textColor="@color/black80"
+            app:layout_constraintStart_toStartOf="@+id/txt_due"
+            app:layout_constraintTop_toBottomOf="@+id/txt_due" />
+
+        <EditText
+            android:id="@+id/etxt_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ems="10"
+            android:focusable="true"
+            android:minLines="3"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:paddingStart="10dp"
+            android:background="@drawable/round_edittext"
+            app:layout_constraintEnd_toEndOf="@+id/payment_status"
+            app:layout_constraintStart_toStartOf="@+id/textView46"
+            app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+
+        <TextView
+            android:id="@+id/txt_note_from_customer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="12dp"
+            android:text="Notes From Members"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/etxt_comment"
+            app:layout_constraintTop_toBottomOf="@+id/etxt_comment" />
+
+        <TextView
+            android:id="@+id/txt_note_from_customer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="12dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_note_from_customer"
+            app:layout_constraintTop_toBottomOf="@+id/txt_note_from_customer" />
+
+        <TextView
+            android:id="@+id/txt_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:backgroundTint="@color/buttoncolor"
+            android:text="Paid On/Start Date"
+            app:layout_constraintStart_toStartOf="@+id/txt_note_from_customer"
+            app:layout_constraintTop_toBottomOf="@+id/txt_note_from_customer" />
+
+        <RelativeLayout
+            android:id="@+id/editText2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:visibility="gone"
+            android:background="@drawable/round_edittext"
+            app:layout_constraintEnd_toEndOf="@+id/etxt_paid_amount"
+            app:layout_constraintStart_toStartOf="@+id/txt_comment"
+            app:layout_constraintTop_toBottomOf="@+id/txt_comment">
+
+            <TextView
+                android:id="@+id/txt_date"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/btn_calender"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="12dp"
+                android:src="@drawable/icon_calendar"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="3dp" />
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:visibility="visible"
+            android:backgroundTint="@color/buttoncolor"
+            android:text="Save Changes"
+            app:layout_constraintEnd_toEndOf="@+id/txt_note_from_customer1"
+            app:layout_constraintTop_toBottomOf="@+id/txt_note_from_customer1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

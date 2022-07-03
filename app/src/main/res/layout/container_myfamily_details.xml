@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/parentCard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    app:cardUseCompatPadding="false"
+    app:cardCornerRadius="20dp"
+    android:elevation="5dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/ll_tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/myFamiliesTab"
+                    style="@style/CustomTabLayout"
+                    app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                    android:layout_width="@dimen/_255sdp"
+                    android:layout_height="@dimen/tab_layout_height"
+                    android:paddingStart="10dp"
+                    app:tabMode="auto"/>
+
+              <!--  <ImageView
+                    android:id="@+id/imgMoreOptions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/ic_more"
+                    android:visibility="visible"/>-->
+                    <ImageView
+                        android:id="@+id/imgMoreOptions"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:padding="@dimen/_5sdp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/horiz_menu"
+                        android:visibility="gone"
+
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_20sdp"/>
+
+            </LinearLayout>
+
+    <com.familheey.app.Utilities.NonSwipeableViewPager
+        android:id="@+id/myFamiliesDetailsViewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:visibility="visible"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_tab"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/goToSubscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="64dp"
+                android:src="@drawable/four_dot"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.AddressFetchingActivity">
+
+
+    <TextView
+        android:id="@+id/labelSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="Hi, Search location here"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialAutoCompleteTextView
+        android:id="@+id/searcAddress"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/edittext_curve_box"
+        android:drawableStart="@drawable/icon_search_gray"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="@string/search"
+        android:imeOptions="actionSearch"
+        android:importantForAutofill="yes"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        android:paddingEnd="32dp"
+        android:textSize="15sp"
+        tools:ignore="Autofill"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="@+id/labelSearch"
+        app:layout_constraintStart_toStartOf="@+id/labelSearch"
+        app:layout_constraintTop_toBottomOf="@+id/labelSearch"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/searcAddress"
+        app:layout_constraintEnd_toEndOf="@+id/searcAddress"
+        app:layout_constraintTop_toTopOf="@+id/searcAddress" />
+
+    <TextView
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/background_light_curved_filled_purple"
+        android:paddingLeft="56dp"
+        android:paddingTop="12dp"
+        android:paddingRight="56dp"
+        android:paddingBottom="12dp"
+        android:text="Done"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:background="#FADAD3"
+    android:orientation="vertical"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="false">
+
+    <com.skydoves.androidribbon.RibbonLayout
+        android:id="@+id/ribbonLayout01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ribbonLayout_bottom_align="left"
+        app:ribbonLayout_header_align="right">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:id="@+id/memberImage"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/avatar_male"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/memberName" />
+
+
+            <ImageView
+                android:id="@+id/memberTypeBackground"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="#1A000000"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/memberImage"
+                app:layout_constraintStart_toStartOf="@+id/memberImage"
+                app:layout_constraintTop_toTopOf="@+id/memberType" />
+
+            <TextView
+                android:id="@+id/memberType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_text"
+                android:backgroundTint="#80000000"
+                android:gravity="center"
+                android:text="Member"
+                android:visibility="gone"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/memberImage"
+                app:layout_constraintEnd_toEndOf="@+id/memberImage"
+                app:layout_constraintStart_toStartOf="@+id/memberImage" />
+
+
+            <TextView
+                android:id="@+id/memberName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Kelly Howard"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/memberOptions"
+                app:layout_constraintStart_toEndOf="@+id/memberImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/addRole"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Add Role"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/memberRole"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/memberName"
+                app:layout_constraintTop_toBottomOf="@+id/memberName" />
+
+
+            <TextView
+                android:id="@+id/membervaliidity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text=""
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/addRole"
+                app:layout_constraintTop_toBottomOf="@+id/addRole" />
+
+            <ImageView
+                android:id="@+id/memberOptions"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="8dp"
+                android:src="@drawable/chat_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/memberName" />
+
+            <TextView
+                android:id="@+id/memberdues"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text=""
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/membervaliidity"
+                app:layout_constraintTop_toBottomOf="@+id/membervaliidity" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Send Reminder"
+                android:textAllCaps="false"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/memberdues"
+                app:layout_constraintTop_toBottomOf="@+id/memberdues" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/memberdues"
+                app:layout_constraintTop_toBottomOf="@+id/memberdues" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.skydoves.androidribbon.RibbonLayout>
+</com.google.android.material.card.MaterialCardView>

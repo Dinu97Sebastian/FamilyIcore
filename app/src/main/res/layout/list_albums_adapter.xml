@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_curve"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="2dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cover_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:background="@color/lightGrey"
+            />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/album_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Reuiio 2019"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/card_curve"
+        app:layout_constraintStart_toStartOf="@+id/card_curve"
+        app:layout_constraintTop_toBottomOf="@+id/card_curve" />
+
+    <TextView
+        android:id="@+id/album_author"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:maxLines="2"
+        android:text="John sasi"
+        android:textSize="14sp"
+        android:textColor="@color/greymedium"
+        app:layout_constraintEnd_toEndOf="@+id/album_name"
+        app:layout_constraintStart_toStartOf="@+id/album_name"
+        app:layout_constraintTop_toBottomOf="@+id/album_name" />
+
+    <TextView
+        android:id="@+id/created_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="22 Nov, 2034"
+        android:textSize="14sp"
+        android:textColor="@color/label"
+        app:layout_constraintEnd_toEndOf="@+id/album_author"
+        app:layout_constraintStart_toStartOf="@+id/album_author"
+        app:layout_constraintTop_toBottomOf="@+id/album_author" />
+
+
+    <ImageView
+        android:id="@+id/selectionIndicator"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/semiTransparentPurpleText"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/cvCount"
+        android:layout_marginBottom="8dp"
+        android:elevation="8dp"
+        android:text="50"
+        app:cardCornerRadius="8dp"
+        android:gravity="center"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/purpleText"
+        android:src="@drawable/ic_more_vert_black_24dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/card_curve"
+        app:layout_constraintEnd_toEndOf="parent" >
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/txtCount"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/white"
+            android:layout_height="match_parent">
+
+        </TextView>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

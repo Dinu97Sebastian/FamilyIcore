@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkSlateGray"
+    android:backgroundTint="@color/dark_blue"
+    tools:context=".Activities.UserRegistrationCompletedActivity">
+
+
+    <ImageView
+        android:id="@+id/connectEngageSeperator2"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/engage"
+        app:layout_constraintEnd_toStartOf="@+id/engage"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/engage" />
+
+    <ImageView
+        android:id="@+id/familheeyImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/family_success"
+        app:layout_constraintBottom_toBottomOf="@+id/labelYoureOnSpot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/connectEngageSeperator3"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/growtgther"
+        app:layout_constraintStart_toStartOf="@+id/connectEngageSeperator2"
+        app:layout_constraintTop_toTopOf="@+id/growtgther" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continueToHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:backgroundTint="@color/greenTextColor"
+        android:fontFamily="@font/roboto_medium"
+        android:paddingLeft="40dp"
+        android:paddingTop="12dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="12dp"
+        android:text="Familheey Me!"
+        android:visibility="invisible"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:backgroundTint="@color/yellowColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:targetApi="lollipop" />
+
+
+    <ProgressBar
+        android:id="@+id/prograss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:backgroundTint="@color/greenTextColor"
+        android:fontFamily="@font/roboto_medium"
+        android:paddingLeft="40dp"
+        android:paddingTop="12dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="12dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:targetApi="lollipop" />
+
+    <TextView
+        android:id="@+id/labelHurray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Hurray!"
+        android:textColor="@android:color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage" />
+
+    <TextView
+        android:id="@+id/whatsnxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/roboto"
+        android:text="What Next?"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/labelYoureOnSpot"
+        app:layout_constraintEnd_toEndOf="@+id/labelYoureOnSpot"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/labelYoureOnSpot"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/labelYoureOnSpot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_thin"
+        android:text="Connect with Families"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/engage"
+        app:layout_constraintStart_toStartOf="@+id/engage"
+        app:layout_constraintTop_toBottomOf="@+id/whatsnxt" />
+
+    <ImageView
+        android:id="@+id/connectEngageSeperator"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/labelYoureOnSpot"
+        app:layout_constraintStart_toStartOf="@+id/connectEngageSeperator2"
+        app:layout_constraintTop_toTopOf="@+id/labelYoureOnSpot" />
+
+
+    <TextView
+        android:id="@+id/engage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="Engage with Events &amp; Posts"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/growtgther"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/connectEngageSeperator2"
+        app:layout_constraintTop_toBottomOf="@+id/labelYoureOnSpot" />
+
+    <TextView
+        android:id="@+id/growtgther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="Grow together as a Family!"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/continueToHome"
+        app:layout_constraintStart_toStartOf="@+id/engage"
+        app:layout_constraintTop_toBottomOf="@+id/engage" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.56" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

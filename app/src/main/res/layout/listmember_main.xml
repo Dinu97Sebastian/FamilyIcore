@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/memberlist_fullview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/searchMembers"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edittext_curve_box"
+        android:drawableLeft="@drawable/icon_search_gray"
+        android:drawablePadding="5dp"
+        android:hint="Search"
+        android:paddingStart="10dp"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingEnd="32dp"
+        android:textSize="15sp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <requestFocus />
+    </EditText>
+
+    <ImageView
+        android:id="@+id/clearSearch"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/places_ic_clear"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/searchMembers"
+        app:layout_constraintEnd_toEndOf="@+id/searchMembers"
+        app:layout_constraintTop_toTopOf="@+id/searchMembers" />
+
+    <TextView
+        android:id="@+id/inviteFromContacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:gravity="right"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/greenTextColor"
+        app:layout_constraintEnd_toEndOf="@+id/searchMembers"
+        app:layout_constraintTop_toBottomOf="@+id/searchMembers" />
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/searchMembers"
+        android:background="@color/appBg"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/searchMembers"
+        app:layout_constraintStart_toStartOf="@+id/searchMembers"
+        app:layout_constraintTop_toBottomOf="@+id/inviteFromContacts">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/member_list"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@+id/searchMembers"
+            android:background="@color/white"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchMembers"
+            android:background="@color/white" />
+    </LinearLayout>
+    <com.familheey.app.CustomViews.TextViews.SemiBoldTextView
+        android:id="@+id/emptyResultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No results to show"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progressListMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/container">
+
+    </androidx.core.widget.ContentLoadingProgressBar>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_invite"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/background_round_green"
+        android:fontFamily="@font/roboto"
+        android:paddingStart="45dp"
+        android:paddingEnd="45dp"
+        android:text="Send Invitation"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/container"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

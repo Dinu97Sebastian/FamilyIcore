@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBg"
+    android:clickable="true"
+    tools:context=".Fragments.FamilyViewMembers.FamilyMembersFragment">
+
+    <View
+        android:id="@+id/searchBoxWhiteBg"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/searchMembers"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        android:background="@drawable/edittext_curve_box"
+        android:drawableLeft="@drawable/icon_search_gray"
+        android:drawablePadding="5dp"
+        android:hint="Search"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="10dp"
+        android:paddingEnd="32dp"
+        android:textSize="15sp"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchBoxWhiteBg"
+        app:layout_constraintBottom_toBottomOf="@+id/searchBoxWhiteBg"/>
+
+    <ImageView
+        android:id="@+id/clearSearch"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/places_ic_clear"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/searchMembers"
+        app:layout_constraintEnd_toEndOf="@+id/searchMembers"
+        app:layout_constraintTop_toTopOf="@+id/searchMembers" />
+
+    <TextView
+        android:id="@+id/membersCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:text="Members"
+        app:layout_constraintStart_toStartOf="@+id/searchMembers"
+        app:layout_constraintTop_toBottomOf="@+id/searchBoxWhiteBg" />
+
+    <TextView
+        android:id="@+id/adminsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginStart="8dp"
+        android:text="Admins"
+        app:layout_constraintBottom_toBottomOf="@+id/membersCount"
+        app:layout_constraintStart_toEndOf="@+id/membersCount"
+        app:layout_constraintTop_toTopOf="@+id/membersCount" />
+    <TextView
+        android:id="@+id/inviteFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Invite Friends"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/membersCount"
+        app:layout_constraintEnd_toEndOf="@+id/searchMembers"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/adminsCount"
+        app:layout_constraintTop_toTopOf="@+id/membersCount" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/membersList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/membersCount" />
+
+    <com.familheey.app.CustomViews.TextViews.SemiBoldTextView
+        android:id="@+id/emptyResultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No results to show"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/membersList"
+        app:layout_constraintEnd_toEndOf="@+id/membersList"
+        app:layout_constraintStart_toStartOf="@+id/membersList"
+        app:layout_constraintTop_toTopOf="@+id/membersList" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+{
+  "IdentityManager": {
+    "Default": {}
+  },
+  "CredentialsProvider": {
+    "CognitoIdentity": {
+      "Default": {
+        "PoolId": "us-east-1:7780560d-b205-4634-89e9-e65ed40624a6",
+        "Region": "us-east-1"
+      }
+    }
+  },
+  "CognitoUserPool": {
+    "Default": {
+      "PoolId": "us-east-1_cDR6boRnS",
+      "AppClientId": "44d2ja17kts5osnu9h6gjisf66",
+      "AppClientSecret": "fdmdbhq8chqkhv3q6nssuk9n3ko6be0g3v98m1df49fjeli4agt",
+      "Region": "us-east-1"
+    }
+  },
+  "S3TransferUtility": {
+    "Default": {
+      "Bucket": "familheey-prod",
+      "Region": "us-east-1"
+    }
+  }
+}
+
+

@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.familheey.app">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <application
+        android:name=".FamilheeyApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/NoActionBarTheme"
+        tools:ignore="GoogleAppIndexingWarning,LockedOrientationActivity"
+        tools:replace="android:icon,android:allowBackup">
+        <activity android:name=".Activities.UserFailureScreenActivity" />
+        <activity android:name=".Activities.DiscoverFamilyActivity" />
+        <activity
+            android:name=".Activities.WelcomeUserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.UserSuccessScreenActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".SmsBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".NewUserWelcomeActivity"
+            android:theme="@style/NoActionBarTheme.NoActionBar" />
+        <activity
+            android:name=".Notification.ActivityActivity"
+            android:theme="@style/NoActionBarTheme.NoActionBar" />
+        <activity android:name=".Notification.NotificationSettingsActivity" />
+        <activity android:name=".BrowserActivity" />
+        <activity
+            android:name=".Discover.DiscoverActivity"
+            android:label="@string/title_activity_discover"
+            android:theme="@style/NoActionBarTheme.NoActionBar"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name=".PaymentHistory.PaymentHistoryActivity"
+            android:label="@string/title_activity_payment_history"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PaymentHistory.AllPaymentHistoryActivity"
+            android:label="@string/title_activity_payment_history"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Stripe.StripeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".membership.EditMembershipActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".membership.MembershipUserListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".membership.AddMembershipTypeActivity"
+            android:label="@string/title_activity_add_membership"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme.NoActionBar" />
+        <activity
+            android:name=".membership.EditUserMembershipActivity"
+            android:label="@string/title_activity_add_membership"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme.NoActionBar" />
+        <activity
+            android:name=".membership.AddUserMembershipActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme.NoActionBar" />
+        <activity
+            android:name=".Topic.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ChatImageFullView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Topic.TopicChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Topic.TopicUsersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Topic.TopicDetailedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Topic.CreateTopic"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Topic.EditTopic"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Topic.TopicsListingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Need.ProfileMyContributionsListingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Need.SelectMyfamilies"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Need.ViewFamiliesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Need.ContributorsListingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Need.NeedContributionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Need.NeedRequestDetailedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.SubscriptionDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.MyFamiliesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.SelectMemberActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TextEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.SelectFamilyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Post.PostDetailForPushActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Post.PostAggregateListingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Post.VideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Post.PostDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity
+            android:name=".Announcement.AnnouncementAcceptRejectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Announcement.AnnouncementDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Announcement.EditAnnouncementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Announcement.CreateAnnouncementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Announcement.AnnouncementFragmentDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Announcement.AnnouncementListing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activities.SubFolderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AlbumSliderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.PendingRequestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.VideoPlayerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AddContactActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.ImageSliderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.EventInvitationsListingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EditHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.SharelistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.OtherUsersFamilyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.UserConnectionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MakeAnnouncementActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Post.SelectFamilesOrPeopleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Need.CreateRequestActivity"
+            android:label="@string/title_activity_create_request"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme.NoActionBar" />
+        <activity
+            android:name=".Need.EditRequestActivity"
+            android:label="@string/title_activity_create_request"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme.NoActionBar" />
+        <activity
+            android:name=".Post.CreatePostActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+                <data android:mimeType="text/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="audio/mpeg" />
+                <data android:mimeType="application/pdf" />
+                <data android:mimeType="application/msword" />
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+                <data android:mimeType="application/vnd.ms-excel application/x-excel" />
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                <data android:mimeType="application/vnd.ms-excel" />
+                <data android:mimeType="application/vnd.ms-powerpoint" />
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.presentation" />
+                <data android:mimeType="application/zip" />
+                <data android:mimeType="application/octet-stream" />
+                <data android:mimeType="application/vnd.rar" />
+                <data android:mimeType="application/x-rar-compressed" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Post.PostAcceptRejectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Post.EditPostActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Post.PostCommentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.FolderSharingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.FamilyAddMemberActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".Activities.FeedbackActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.LocateActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.ImageChangerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.FamilyDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activities.CalendarActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.CreateAlbumDetailedActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.CreateAlbumBasicActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Dialogs.RelationShipSelectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.EditSignupDescriptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.AddSignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.LinkedFamilyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.LinkFamilyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.CreateEventActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.InviteFriendsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.AddressFetchingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+                android:name=".Activities.CreatedEventDetailActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="familheey.com"
+                    android:scheme="https" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.ProfileEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.CreateFamilyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".Activities.UserRegistrationCompletedActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.FamilyRequestViewingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name=".Activities.UserRegistrationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Activities.OTPVerificationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.GuestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.ShareEventActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Activities.VolunteersActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Need.SingleContrionsListing"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"
+            tools:replace="android:value" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_map_v2_api_key" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/notification_small" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <receiver android:name=".receivers.AlarmReceiver" />
+        <receiver
+            android:name = ".Utilities.NotificationBroadcastReceiver"
+            android:enabled = "true"
+            android:exported = "true" >
+        </receiver>
+        <service
+            android:name=".Firebase.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".ClearService"
+            android:stopWithTask="false" />
+
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:exported="false"
+            android:enabled="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider>
+
+        <service
+            android:name=".LazyUplaod.UploadService"
+            android:enabled="true" />
+    </application>
+
+</manifest>

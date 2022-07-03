@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:clickable="true"
+    android:fillViewport="true"
+    tools:context=".Fragments.FamilyCreationLevelFourFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/labelFamily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Family"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Settings"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/labelFamily"
+            app:layout_constraintStart_toEndOf="@+id/labelFamily"
+            app:layout_constraintTop_toTopOf="@+id/labelFamily" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/privateFamily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="16dp"
+            android:checked="true"
+            android:text="Make this family private"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelFamily" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/searchableFamily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:checked="true"
+            android:text="Make this family searchable"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/privateFamily" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/linkOtherFamilies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:checked="false"
+            android:text="Link with other families as well"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchableFamily" />
+
+        <TextView
+            android:id="@+id/advancedSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:tag="us"
+            android:text="Advanced settings"
+            app:layout_constraintBottom_toBottomOf="@+id/proceed"
+            app:layout_constraintEnd_toStartOf="@+id/proceed"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/linkOtherFamilies"
+            app:layout_constraintTop_toTopOf="@+id/proceed" />
+
+        <com.familheey.app.CustomViews.Buttons.RegularButton
+            android:id="@+id/proceed"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_light_curved_filled_purple"
+            android:layout_marginBottom="120dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="Done"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linkOtherFamilies" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

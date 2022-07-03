@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/changeImage"
+        android:title="Change Image" />
+    <item
+        android:id="@+id/changeCropping"
+        android:title="Change Image Preview"
+        android:visible="false" />
+</menu>

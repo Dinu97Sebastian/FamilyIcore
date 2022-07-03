@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/announcements"
+    android:title="@string/fragment_dashboard_menu_announcements"/>
+    <item android:id="@+id/members"
+        android:title="@string/fragment_dashboard_menu_members"/>
+    <item android:id="@+id/membership"
+        android:title="@string/fragment_dashboard_menu_membership"/>
+    <item android:id="@+id/linkedFamilies"
+        android:title="@string/fragment_dashboard_menu_linkedFamilies"/>
+    <item android:id="@+id/documents"
+        android:title="@string/fragment_dashboard_menu_documents"/>
+    <item android:id="@+id/gallery"
+        android:title="@string/fragment_dashboard_menu_gallery"/>
+    <item android:id="@+id/aboutUs"
+        android:title="@string/fragment_dashboard_menu_aboutUs"/>
+    <item android:id="@+id/settings"
+        android:title="@string/fragment_dashboard_menu_settings"/>
+</menu>

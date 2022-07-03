@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/googleLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_curved_filled_grey"
+        android:paddingLeft="48dp"
+        android:paddingTop="12dp"
+        android:paddingRight="48dp"
+        android:paddingBottom="12dp"
+        android:text="Login with Google"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/faceBookLogin"
+        app:layout_constraintEnd_toEndOf="@+id/faceBookLogin"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/faceBookLogin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/faceBookLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_curved_filled_grey"
+        android:paddingLeft="48dp"
+        android:paddingTop="12dp"
+        android:paddingRight="48dp"
+        android:paddingBottom="12dp"
+        android:text="Login with Facebook"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/linkedinLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/googleLogin" />
+
+
+    <Button
+        android:id="@+id/linkedinLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_curved_filled_grey"
+        android:paddingLeft="48dp"
+        android:paddingTop="12dp"
+        android:paddingRight="48dp"
+        android:paddingBottom="12dp"
+        android:text="Login with Linkedin"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/faceBookLogin"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/faceBookLogin"
+        app:layout_constraintTop_toBottomOf="@+id/faceBookLogin" />
+
+    <TextView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="24dp"
+        android:text="SKIP"
+        android:textColor="@color/darkSlateGray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/faceBookLogin"
+        app:layout_constraintStart_toStartOf="@+id/faceBookLogin"
+        app:layout_constraintTop_toBottomOf="@+id/linkedinLogin" />
+</androidx.constraintlayout.widget.ConstraintLayout>

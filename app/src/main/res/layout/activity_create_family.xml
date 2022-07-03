@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.CreateFamilyActivity">
+
+    <include
+        android:id="@+id/toolbarIncluderLayout"
+        layout="@layout/item_toolbar_normal_no_notif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/creationStepProgress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarIncluderLayout">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/round1"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginRight="2dp"
+            app:cardBackgroundColor="@color/quantum_grey500"
+            app:cardCornerRadius="8dp">
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="80dp"
+            android:layout_height="2dp"
+            android:background="@color/quantum_grey500">
+
+        </View>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/round2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+
+            app:cardBackgroundColor="@color/quantum_grey500"
+            app:cardCornerRadius="8dp">
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="80dp"
+            android:layout_height="2dp"
+
+            android:background="@color/quantum_grey500">
+
+        </View>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/round3"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+
+            app:cardBackgroundColor="@color/quantum_grey500"
+            app:cardCornerRadius="8dp">
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="80dp"
+            android:layout_height="2dp"
+            android:background="@color/quantum_grey500">
+
+        </View>
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/round4"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            app:cardBackgroundColor="@color/quantum_grey500"
+            app:cardCornerRadius="8dp">
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/createFamilyStepsLoader"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creationStepProgress" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

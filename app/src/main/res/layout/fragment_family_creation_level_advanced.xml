@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:clickable="true"
+    android:fillViewport="true"
+    tools:context=".Fragments.FamilyCreationLevelAdvancedFragment">
+
+    <include
+        android:id="@+id/toolbarIncluder"
+        layout="@layout/item_toolbar_normal_no_notif"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/labelFamily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Family"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/labelAdvancedSettings"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarIncluder" />
+
+    <TextView
+        android:id="@+id/labelAdvancedSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Advanced Settings"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/labelFamily"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/labelFamily"
+        app:layout_constraintTop_toTopOf="@+id/labelFamily" />
+
+    <TextView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelAdvancedSettings"
+        android:text="Skip"
+        android:textColor="@color/label"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/labelAdvancedSettings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/labelAdvancedSettings" />
+
+
+    <ScrollView
+        android:id="@+id/dataScrollContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelAdvancedSettings">
+
+        <LinearLayout
+            android:id="@+id/dataConntainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelAdvancedSettings">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:elevation="0dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelHowMembersCanJoin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="How members can join ?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelFamily" />
+
+                    <RadioGroup
+                        android:id="@+id/memberJoiningType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingStart="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/labelHowMembersCanJoin"
+                        app:layout_constraintTop_toBottomOf="@+id/labelHowMembersCanJoin">
+
+                        <RadioButton
+                            android:id="@+id/invitationOnly"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Invitation only"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/anyOneCanJoinWithApproval"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="Anyone can join - with approval"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/anyOneCanJoin"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Anyone can join"
+                            android:textColor="@color/greymedium" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/whoCanApproveMemberJoiningContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:elevation="0dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelWhoCanApproveMembers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Who can approve members ?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/whoCanApproveMemberJoining"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/labelWhoCanApproveMembers"
+                        app:layout_constraintTop_toBottomOf="@+id/labelWhoCanApproveMembers">
+
+                        <RadioButton
+                            android:id="@+id/adminsCanApproveMemberJoining"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="Admin"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/membersCanApproveMemberJoining"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Members"
+                            android:textColor="@color/greymedium" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:elevation="0dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelWhoCanCreatePosts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Who can create posts, events, albums and documents?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/labelHowMembersCanJoin"
+                        app:layout_constraintTop_toBottomOf="@+id/whoCanApproveMemberJoining" />
+
+                    <RadioGroup
+                        android:id="@+id/postCreationAccess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/labelWhoCanCreatePosts"
+                        app:layout_constraintTop_toBottomOf="@+id/labelWhoCanCreatePosts">
+
+                        <RadioButton
+                            android:id="@+id/membersCreatePost"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="Members"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/adminCreatePost"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Admin only"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/anyOneWithApprovalCreatePost"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="false"
+                            android:text="Member - with approval"
+                            android:textColor="@color/greymedium"
+                            android:visibility="gone" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+            <!--New modification for enable/disable rating feature for all posts-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:elevation="0dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelEnableDisableRating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Do you want to enable rating feature for all posts?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/labelHowMembersCanJoin"
+                        app:layout_constraintTop_toBottomOf="@+id/postCreationAccess" />
+
+                    <RadioGroup
+                        android:id="@+id/ratingVisibilityAccess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp">
+
+                        <RadioButton
+                            android:id="@+id/enableRatingForAllPosts"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Yes"
+                            android:visibility="visible"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/disableRatingForAllPosts"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="No"
+                            android:textColor="@color/greymedium" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+            <!--End of rating feature -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:elevation="0dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelWhoCanViewPosts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Who can view posts ?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/labelHowMembersCanJoin"
+                        app:layout_constraintTop_toBottomOf="@+id/postCreationAccess" />
+
+                    <RadioGroup
+                        android:id="@+id/postVisibilityAccess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp">
+
+                        <RadioButton
+                            android:id="@+id/anyOneCanViewPost"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Public"
+                            android:visibility="gone"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/membersCanViewPost"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="Members"
+                            android:textColor="@color/greymedium" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:elevation="0dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="0dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelPostApprovalAccess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Post approval ?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/labelHowMembersCanJoin"
+                        app:layout_constraintTop_toBottomOf="@+id/postVisibilityAccess" />
+
+                    <RadioGroup
+                        android:id="@+id/postApprovalAccess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/labelPostApprovalAccess"
+                        app:layout_constraintTop_toBottomOf="@+id/labelPostApprovalAccess">
+
+                        <RadioButton
+                            android:id="@+id/noApprovalNeeded"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="Not needed"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/adminApprovalNeeded"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Admin"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/memberApprovalNeeded"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Member"
+                            android:textColor="@color/greymedium" />
+                    </RadioGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelWhoCanCreateAnnouncement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Who can create announcements ?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/labelHowMembersCanJoin"
+                        app:layout_constraintTop_toBottomOf="@+id/whoCanApproveMemberJoining" />
+
+                    <RadioGroup
+                        android:id="@+id/announcementCreationAccess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/labelWhoCanCreatePosts"
+                        app:layout_constraintTop_toBottomOf="@+id/labelWhoCanCreatePosts">
+
+                        <RadioButton
+                            android:id="@+id/adminCreateAnnouncement"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="Admin only"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/anyMemberCreateAnnouncement"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="false"
+                            android:text="Any member"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/anyMemberWithApprovalCreateAnnouncement"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="false"
+                            android:text="Any member - with approval"
+                            android:textColor="@color/greymedium"
+                            android:visibility="gone" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelWhoCanViewAnnouncements"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Who can view announcements ?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/labelHowMembersCanJoin"
+                        app:layout_constraintTop_toBottomOf="@+id/postCreationAccess" />
+
+                    <RadioGroup
+                        android:id="@+id/announcementVisibilityAccess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp">
+
+                        <RadioButton
+                            android:id="@+id/anyOneCanViewAnnouncement"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Public"
+                            android:visibility="gone"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/membersCanViewAnnouncement"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="Members"
+                            android:textColor="@color/greymedium" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelWhoCancreateRequest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Who can view request ?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/labelHowMembersCanJoin"
+                        app:layout_constraintTop_toBottomOf="@+id/postCreationAccess" />
+
+                    <RadioGroup
+                        android:id="@+id/requestcreateAccess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp">
+
+                        <RadioButton
+                            android:id="@+id/adminCreateRequestRequest"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Admin only"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/anyMemberCreateRequestRequest"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="Any member"
+                            android:textColor="@color/greymedium" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:elevation="0dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="0dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelAnnouncementApprovalAccess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Announcement approval ?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/labelHowMembersCanJoin"
+                        app:layout_constraintTop_toBottomOf="@+id/postVisibilityAccess" />
+
+                    <RadioGroup
+                        android:id="@+id/announcementApprovalAccess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/labelPostApprovalAccess"
+                        app:layout_constraintTop_toBottomOf="@+id/labelPostApprovalAccess">
+
+                        <RadioButton
+                            android:id="@+id/noApprovalNeededForAnnouncement"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="Not needed"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/adminApprovalForAnnouncementNeeded"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Admin"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/memberApprovalNeededForAnnouncement"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Member"
+                            android:textColor="@color/greymedium" />
+                    </RadioGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/linkFamilyContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:elevation="0dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="0dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelLinkFamily"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Who can link families to this family?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/labelPostApprovalAccess"
+                        app:layout_constraintTop_toBottomOf="@+id/postApprovalAccess" />
+
+                    <RadioGroup
+                        android:id="@+id/whoCanLinkFamily"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/labelLinkFamily"
+                        app:layout_constraintTop_toBottomOf="@+id/labelLinkFamily">
+
+                        <RadioButton
+                            android:id="@+id/adminsCanLink"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="Admin"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/membersCanLink"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Members"
+                            android:textColor="@color/greymedium" />
+                    </RadioGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/linkFamilyApprovalContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:elevation="0dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="0dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelLinkFamilyApproval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Who can approve link family requests to this family?"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/labelLinkFamily"
+                        app:layout_constraintTop_toBottomOf="@+id/whoCanLinkFamily" />
+
+                    <RadioGroup
+                        android:id="@+id/whoCanApproveFamilyLink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/labelLinkFamilyApproval"
+                        app:layout_constraintTop_toBottomOf="@+id/labelLinkFamilyApproval">
+
+                        <RadioButton
+                            android:id="@+id/noApprovalNeededToLink"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:checked="true"
+                            android:text="Not needed"
+                            android:textColor="@color/greymedium" />
+
+                        <RadioButton
+                            android:id="@+id/adminsCanApproveFamilyLinking"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="Admin"
+                            android:textColor="@color/greymedium" />
+                    </RadioGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="30dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/back"
+                    android:layout_width="120dp"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/white"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp"
+                    android:text="back"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/proceed"
+                    app:layout_constraintEnd_toStartOf="@id/proceed"
+                    app:layout_constraintTop_toTopOf="@id/proceed" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/proceed"
+                    android:layout_width="120dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/background_light_curved_filled_purple"
+                    android:backgroundTint="@color/buttoncolor"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp"
+                    android:text="Done"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/documents"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Documents"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dataScrollContainer" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/unusedGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="documents,history,programs,currentVacancies,linkedFamily" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:checked="true"
+        android:text="History"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/documents"
+        app:layout_constraintTop_toBottomOf="@+id/documents" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/linkedFamily"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:checked="true"
+        android:text="Linked families"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/documents"
+        app:layout_constraintTop_toBottomOf="@+id/history" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/programs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:checked="true"
+        android:text="Programs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/documents"
+        app:layout_constraintTop_toBottomOf="@+id/linkedFamily" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/currentVacancies"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:checked="true"
+        android:text="Current vacancies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/documents"
+        app:layout_constraintTop_toBottomOf="@+id/programs" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/familyOtherSettingsGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="labelFamily,labelAdvancedSettings,skip" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

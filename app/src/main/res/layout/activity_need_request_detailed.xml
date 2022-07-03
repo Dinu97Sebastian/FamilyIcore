@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    android:fitsSystemWindows="true"
+    tools:context="com.familheey.app.Need.NeedRequestDetailedActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbarIncluder"
+            layout="@layout/item_toolbar_more" />
+
+        <ImageView
+            android:id="@+id/userProfileImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarIncluder" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/userProfileImage"
+            app:layout_constraintTop_toTopOf="@+id/userProfileImage" />
+
+        <TextView
+            android:id="@+id/postedIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#323a42"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/postedTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#84878b"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/postedIn"
+            app:layout_constraintStart_toStartOf="@+id/postedIn"
+            app:layout_constraintTop_toBottomOf="@+id/postedIn" />
+
+        <ImageView
+            android:id="@+id/requestedTimeIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_access_time_black_24dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/userProfileImage"
+            app:layout_constraintTop_toBottomOf="@+id/postedTime" />
+
+        <TextView
+            android:id="@+id/requestedTime"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:textColor="#6c6775"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/requestedTimeIcon"
+            app:layout_constraintEnd_toEndOf="@+id/postedTime"
+            app:layout_constraintStart_toEndOf="@+id/requestedTimeIcon"
+            app:layout_constraintTop_toBottomOf="@+id/postedTime" />
+
+        <ImageView
+            android:id="@+id/requestedLocationIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:drawableTint="@color/quantum_grey500"
+            android:padding="3dp"
+            android:src="@drawable/ic_event_location"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/requestedTimeIcon"
+            app:layout_constraintTop_toBottomOf="@+id/requestedTime" />
+
+        <TextView
+            android:id="@+id/requestedLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:drawableTint="#524d5c"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/requestedTime"
+            app:layout_constraintStart_toStartOf="@+id/requestedTime"
+            app:layout_constraintTop_toTopOf="@+id/requestedLocationIcon" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/needsList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/requestedLocation"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_need_detail" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerLoader"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbarIncluder"
+            app:shimmer_base_color="#F6F6F6"
+            app:shimmer_duration="1000">
+
+            <include layout="@layout/activity_need_request_detailed_shimmer" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/thanks_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:visibility="gone"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include layout="@layout/item_need_thanks_post" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/contributionSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include layout="@layout/item_need_pledge_now" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/contributedSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include layout="@layout/item_need_contribution_pledged" />
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

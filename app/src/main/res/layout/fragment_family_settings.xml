@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:clickable="true"
+    tools:context=".Fragments.FamilySettingsFragment">
+    <include
+        android:id="@+id/layoutIncluder"
+        layout="@layout/item_toolbar_normal_no_notif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/basicSettingsImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_settings_black"
+        app:layout_constraintBottom_toBottomOf="@+id/labelBasicSettings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/labelBasicSettings" />
+
+    <TextView
+        android:id="@+id/labelBasicSettings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Basic Settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/basicSettingsImage"
+        app:layout_constraintTop_toBottomOf="@+id/layoutIncluder" />
+
+    <ImageView
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/lightGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelBasicSettings"
+        app:layout_constraintTop_toBottomOf="@+id/labelBasicSettings" />
+
+
+    <ImageView
+        android:id="@+id/followImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_settings_black"
+        app:layout_constraintBottom_toBottomOf="@+id/labelFollow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/labelFollow" />
+
+    <TextView
+        android:id="@+id/labelFollow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Follow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/followImage"
+        app:layout_constraintTop_toBottomOf="@+id/labelFamilyUrldivider" />
+
+    <ImageView
+        android:id="@+id/dividerOne"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/lightGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelFollow"
+        app:layout_constraintTop_toBottomOf="@+id/labelFollow" />
+
+
+    <ImageView
+        android:id="@+id/unFollowImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_settings_black"
+        app:layout_constraintBottom_toBottomOf="@+id/labelunFollow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/labelunFollow" />
+
+    <TextView
+        android:id="@+id/labelunFollow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Unfollow Family"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/unFollowImage"
+        app:layout_constraintTop_toBottomOf="@+id/dividerOne" />
+
+    <ImageView
+        android:id="@+id/dividerTwo"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/lightGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelunFollow"
+        app:layout_constraintTop_toBottomOf="@+id/labelunFollow" />
+
+    <ImageView
+        android:id="@+id/leaveFamilyImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_settings_black"
+        app:layout_constraintBottom_toBottomOf="@+id/labelLeaveFamily"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/labelLeaveFamily" />
+
+    <TextView
+        android:id="@+id/labelLeaveFamily"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Leave Family"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/leaveFamilyImage"
+        app:layout_constraintTop_toBottomOf="@+id/dividerTwo" />
+
+    <ImageView
+        android:id="@+id/dividerThree"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/lightGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelLeaveFamily"
+        app:layout_constraintTop_toBottomOf="@+id/labelLeaveFamily" />
+
+    <ImageView
+        android:id="@+id/deleteFamilyImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_settings_black"
+        app:layout_constraintBottom_toBottomOf="@+id/labelDeleteFamily"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/labelDeleteFamily" />
+
+    <TextView
+        android:id="@+id/labelDeleteFamily"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Delete Family"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/leaveFamilyImage"
+        app:layout_constraintTop_toBottomOf="@+id/dividerThree" />
+    <ImageView
+        android:id="@+id/dividerTwoHalf"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/lightGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelDeleteFamily"
+        app:layout_constraintTop_toBottomOf="@+id/labelDeleteFamily" />
+
+
+    <ImageView
+        android:id="@+id/labelbankAddUrlImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_settings_black"
+        app:layout_constraintBottom_toBottomOf="@+id/labelbankAddUrl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/labelbankAddUrl" />
+
+    <RelativeLayout
+        android:id="@+id/labelbankAddUrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/labelbankAddUrlImage"
+        app:layout_constraintTop_toBottomOf="@+id/dividerTwoHalf">
+
+
+        <TextView
+            android:id="@+id/txt_account_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_toEndOf="@+id/bnk_img"
+            android:text="Add Stripe Account" />
+
+        <TextView
+            android:id="@+id/txt_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/img_status"
+            android:text="Pending" />
+
+        <ImageView
+            android:id="@+id/img_status"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="1dp"
+            android:layout_marginTop="-2dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_error_outline_black_24dp" />
+
+        <TextView
+            android:id="@+id/txt_error_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_account_number"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/red"
+            android:textSize="11sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/dividerbank"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/lightGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelbankAddUrl"
+        app:layout_constraintTop_toBottomOf="@+id/labelbankAddUrl" />
+
+
+    <ImageView
+        android:id="@+id/labelFamilyUrlImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_settings_black"
+        app:layout_constraintBottom_toBottomOf="@+id/labelFamilyUrl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/labelFamilyUrl" />
+    <TextView
+        android:id="@+id/labelFamilyUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Family Url"
+        app:layout_constraintStart_toEndOf="@+id/labelFamilyUrlImage"
+        app:layout_constraintTop_toBottomOf="@+id/dividerbank" />
+
+
+    <ImageView
+        android:id="@+id/advancedSettingsImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_settings_black"
+        app:layout_constraintBottom_toBottomOf="@+id/labelAdvancedSettings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/labelAdvancedSettings" />
+
+    <TextView
+        android:id="@+id/labelAdvancedSettings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Advanced Settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/advancedSettingsImage"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+
+    <ImageView
+        android:id="@+id/labelFamilyUrldivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/lightGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/labelBasicSettings"
+        app:layout_constraintTop_toBottomOf="@+id/labelAdvancedSettings" />
+
+
+    <TextView
+        android:id="@+id/familyUrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="left|center"
+        android:maxLines="1"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/shareFamilyUrl"
+        app:layout_constraintStart_toEndOf="@+id/labelFamilyUrlImage"
+        app:layout_constraintTop_toBottomOf="@+id/labelFamilyUrl" />
+
+    <ImageView
+        android:id="@+id/editFamilyUrl"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/icon_edit_pencil"
+        app:layout_constraintBottom_toBottomOf="@+id/labelFamilyUrl"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/labelFamilyUrl"
+        app:layout_constraintTop_toTopOf="@+id/labelFamilyUrl" />
+
+    <ImageView
+        android:id="@+id/shareFamilyUrl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_share1"
+        app:layout_constraintBottom_toBottomOf="@+id/familyUrl"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/familyUrl" />
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/followGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="followImage,labelFollow,dividerOne" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/unFollowGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="unFollowImage,labelunFollow,dividerTwo" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/deleteGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="deleteFamilyImage,labelDeleteFamily,dividerTwoHalf" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/leaveFamilyGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="leaveFamilyImage,labelLeaveFamily,dividerThree" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/basicSettingsGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="divider,labelBasicSettings,basicSettingsImage" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/advancedSettingsGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="advancedSettingsImage,labelAdvancedSettings,labelFamilyUrldivider" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/addbank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="labelbankAddUrlImage,labelbankAddUrl,dividerbank" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    tools:context=".Fragments.UserDetailsLevelTwoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/headerImage"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/get_started_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/headerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Bit about you..."
+            android:textColor="@android:color/white"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/headerImage"
+            app:layout_constraintEnd_toEndOf="@+id/headerImage"
+            app:layout_constraintStart_toStartOf="@+id/headerImage"
+            app:layout_constraintTop_toTopOf="@+id/headerImage" />
+
+        <TextView
+            android:id="@+id/subHeaderText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto"
+            android:text="Keep going! bit more about you..."
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/headerImage"
+            app:layout_constraintStart_toStartOf="@+id/headerImage"
+            app:layout_constraintTop_toBottomOf="@+id/headerText" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/footer"
+            style="@style/CustomCardViewStyle"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="200dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="526dp">
+
+                <TextView
+                    android:id="@+id/labelDateOfBirth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Your birthday? (Optional)"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/dateOfBirth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_light_curved_light_grey"
+                    android:drawableRight="@drawable/icon_calendar"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="@+id/labelDateOfBirth"
+                    app:layout_constraintStart_toStartOf="@+id/labelDateOfBirth"
+                    app:layout_constraintTop_toBottomOf="@+id/labelDateOfBirth" />
+
+                <TextView
+                    android:id="@+id/labelLivingIn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="City you are residing in?"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="@+id/dateOfBirth"
+                    app:layout_constraintStart_toStartOf="@+id/dateOfBirth"
+                    app:layout_constraintTop_toBottomOf="@+id/dateOfBirth" />
+
+                <EditText
+                    android:id="@+id/livingIn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_light_curved_light_grey"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_down"
+                    android:drawableTint="@color/quantum_grey300"
+                    android:inputType="textPersonName"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="@+id/labelLivingIn"
+                    app:layout_constraintStart_toStartOf="@+id/labelLivingIn"
+                    app:layout_constraintTop_toBottomOf="@+id/labelLivingIn" />
+
+                <TextView
+                    android:id="@+id/labelOrigin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="City you are originally from?"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="@+id/livingIn"
+                    app:layout_constraintStart_toStartOf="@+id/livingIn"
+                    app:layout_constraintTop_toBottomOf="@+id/livingIn" />
+
+                <EditText
+                    android:id="@+id/origin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_light_curved_light_grey"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_down"
+                    android:drawableTint="@color/quantum_grey300"
+                    android:inputType="textPersonName"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="@+id/labelOrigin"
+                    app:layout_constraintStart_toStartOf="@+id/labelOrigin"
+                    app:layout_constraintTop_toBottomOf="@+id/labelOrigin" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/next"
+                    style="@style/CustomButtonWithNextIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:backgroundTint="@color/purpleText"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:text="Next"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    app:backgroundTint="@color/purpleText"
+                    app:cornerRadius="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/origin" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp"
+                    android:backgroundTint="@color/purpleText"
+                    android:paddingLeft="40dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="40dp"
+                    android:paddingBottom="10dp"
+                    android:text="Back"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                    android:textColor="@color/white"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/purpleText"
+                    app:layout_constraintBottom_toBottomOf="@+id/next"
+                    app:layout_constraintEnd_toStartOf="@+id/VerticalCenterGuideLine"
+                    app:layout_constraintTop_toTopOf="@+id/next"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/VerticalCenterGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="202dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

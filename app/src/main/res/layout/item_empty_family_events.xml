@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/labelNoEventsYet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No events till now"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noMembersImage" />
+
+    <ImageView
+        android:id="@+id/noMembersImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:src="@drawable/empty_image_events"
+        app:layout_constraintBottom_toTopOf="@+id/labelNoEventsYet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's add a new one!"
+        app:layout_constraintBottom_toTopOf="@+id/create_event"
+        app:layout_constraintEnd_toEndOf="@+id/create_event"
+        app:layout_constraintStart_toStartOf="@+id/create_event"
+        app:layout_constraintTop_toBottomOf="@+id/labelNoEventsYet" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/create_event"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/greenTextColor"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:text="Create Event"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="10dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

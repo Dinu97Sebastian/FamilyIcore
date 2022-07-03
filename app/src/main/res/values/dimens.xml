@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="design_snackbar_padding_horizontal">0dp</dimen>
+    <dimen name="userRegistrationTopMarginPercentage">10</dimen>
+    <dimen name="fab_margin">16</dimen>
+    <dimen name="myFamilyBlocksHorizontalMargin">8dp</dimen>
+    <dimen name="myFamilyBlocksVerticalMargin">4dp</dimen>
+    <dimen name="growEngageConnect">16sp</dimen>
+    <dimen name="card_top_radius">16dp</dimen>
+    <dimen name="toolbarProfilePadding">6dp</dimen>
+    <dimen name="toolbarBellIconPadding">14dp</dimen>
+    <dimen name="toolbarBackButtonPadding">16dp</dimen>
+
+    <dimen name="normalEditTextSize">16sp</dimen>
+    <dimen name="normalSwitchTextSize">16sp</dimen>
+    <dimen name="normalLabelHintTextSize">15sp</dimen>
+    <dimen name="regularButtonTextSize">14sp</dimen>
+    <dimen name="toolbarTitleTextSize">20sp</dimen>
+    <dimen name="editTextToLabelSpacing">9dp</dimen>
+    <dimen name="urlLabelTextSize">13sp</dimen>
+    <dimen name="urlEditTextTextSize">13sp</dimen>
+
+    <dimen name="editTextPaddingVertical">13dp</dimen>
+    <dimen name="editTextPaddingHorizontal">13dp</dimen>
+    <dimen name="editTextHorizontalMargin">16dp</dimen>
+    <dimen name="editTextVerticalMargin">24dp</dimen>
+    <dimen name="firstViewTopMargin">11dp</dimen>
+
+    <dimen name="buttonPaddingVertical">10dp</dimen>
+    <dimen name="buttonPaddingHorizontal">24dp</dimen>
+    <dimen name="buttonImagePadding">32dp</dimen>
+
+    <dimen name="radioButtonTextSize">15sp</dimen>
+    <dimen name="defaultMarginLeft">16dp</dimen>
+    <dimen name="defaultMarginTop">12dp</dimen>
+    <dimen name="defaultMarginRight">16dp</dimen>
+    <dimen name="corner_radius">8dp</dimen>
+    <dimen name="grid_expected_size">120dp</dimen>
+    <dimen name="family_creation_buttonwidth">180dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+
+    <dimen name="detail_backdrop_height">256dp</dimen>
+    <dimen name="card_margin">16dp</dimen>
+    <dimen name="list_item_avatar_size">40dp</dimen>
+    <dimen name="tab_layout_height">48dp</dimen>
+</resources>

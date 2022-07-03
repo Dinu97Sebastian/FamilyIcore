@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayoutMain"
+    android:layout_width="match_parent"
+    android:animateLayoutChanges="true"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F9F9FA"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@color/lightGrey"
+                    app:layout_constraintDimensionRatio="4:3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/btn_img_change"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:visibility="invisible"
+                    android:src="@drawable/ic_camera"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_banner"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="#F7D860"
+                    app:cardCornerRadius="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_banner">
+
+                    <TextView
+                        android:id="@+id/txtCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:textColor="@color/black" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/visibility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#7D7D7D"
+                    app:layout_constraintStart_toStartOf="@+id/textView15"
+                    app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="#7D7D7D"
+                    android:text=""
+                    app:layout_constraintBottom_toBottomOf="@+id/visibility"
+                    app:layout_constraintStart_toEndOf="@+id/visibility"
+                    app:layout_constraintTop_toTopOf="@+id/visibility" />
+                <LinearLayout
+                    android:id="@+id/recurringEventView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="@+id/visibility"
+                    app:layout_constraintTop_toBottomOf="@+id/visibility">
+                    <TextView
+                        android:id="@+id/recurringEvent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="#7D7D7D"
+                        android:visibility="gone"
+                        android:text="Recurring Event"
+                        />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/txtTitleMain"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="#3A2262"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/visibility"
+                    app:layout_constraintTop_toBottomOf="@+id/recurringEventView" />
+
+                <TextView
+                    android:id="@+id/txtEventCreator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#7D7D7D"
+                    app:layout_constraintEnd_toStartOf="@+id/joinOnlineEvent"
+                    app:layout_constraintStart_toStartOf="@+id/txtTitleMain"
+                    app:layout_constraintTop_toBottomOf="@id/txtTitleMain" />
+
+                <TextView
+                    android:id="@+id/hostedBy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:textColor="#7D7D7D"
+                    app:layout_constraintEnd_toStartOf="@+id/joinOnlineEvent"
+                    app:layout_constraintStart_toStartOf="@+id/txtEventCreator"
+                    app:layout_constraintTop_toBottomOf="@id/txtEventCreator" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/joinOnlineEvent"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/purpleText"
+                    android:backgroundTint="@color/purpleText"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Join"
+                    android:visibility="gone"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    app:cornerRadius="4dp"
+                    app:layout_constraintBottom_toBottomOf="@id/hostedBy"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txtEventCreator" />
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#D3D3D3"
+                    app:layout_constraintTop_toBottomOf="@+id/hostedBy"
+                    tools:layout_editor_absoluteX="16dp" />
+
+
+                <TextView
+                    android:id="@+id/txtEventTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawableLeft="@drawable/icon_calendar"
+                    android:drawablePadding="8dp"
+                    android:gravity="left|center"
+                    android:textColor="#7D7D7D"
+                    app:layout_constraintEnd_toEndOf="@+id/eventActions"
+                    app:layout_constraintLeft_toLeftOf="@id/view1"
+                    app:layout_constraintStart_toStartOf="@+id/visibility"
+                    app:layout_constraintTop_toBottomOf="@+id/view1"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/recurringView"
+    android:orientation="vertical"
+    app:layout_constraintStart_toStartOf="@+id/visibility"
+    app:layout_constraintTop_toBottomOf="@+id/txtEventTime"
+    >
+    <LinearLayout
+        android:id="@+id/occurrenceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/labelOccurrence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#7D7D7D"
+            android:layout_marginTop="8dp"
+            android:text="Occurrence: "
+            />
+        <TextView
+            android:id="@+id/occurrence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#7D7D7D"
+            />
+    </LinearLayout>
+</LinearLayout>
+
+                <ImageView
+                    android:id="@+id/meetingIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:padding="2dp"
+                    android:src="@drawable/cursor_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/meetingLink"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="@+id/recurringView"
+                    app:layout_constraintTop_toTopOf="@+id/meetingLink" />
+
+                <com.luseen.autolinklibrary.AutoLinkTextView
+                    android:id="@+id/meetingLink"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="#8D9296"
+                    android:gravity="left|center"
+                    android:maxLines="2"
+                    android:textColor="#7D7D7D"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/recurringView"
+                    app:layout_constraintStart_toEndOf="@+id/meetingIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/recurringView" />
+
+                <TextView
+                    android:id="@+id/txtLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="2dp"
+                    android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="#8D9296"
+                    android:gravity="left|center"
+                    android:maxLines="2"
+                    android:textColor="#7D7D7D"
+                    app:layout_constraintEnd_toStartOf="@+id/img_location"
+                    app:layout_constraintLeft_toLeftOf="@id/txtEventTime"
+                    app:layout_constraintStart_toStartOf="@+id/txtEventTime"
+                    app:layout_constraintTop_toBottomOf="@+id/meetingLink" />
+
+                <ImageView
+                    android:id="@+id/img_location"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:rotation="30"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_navigation_black_24dp"
+                    app:layout_constraintEnd_toEndOf="@+id/txtEventTime"
+                    app:layout_constraintTop_toTopOf="@+id/txtLocation" />
+
+                <ImageView
+                    android:id="@+id/share_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView15"
+                    app:layout_constraintEnd_toStartOf="@+id/eventActions"
+                    app:layout_constraintTop_toTopOf="@+id/textView15"
+                    app:srcCompat="@android:drawable/ic_menu_share" />
+
+                <ImageView
+                    android:id="@+id/eventActions"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/icon_options"
+                    app:layout_constraintBottom_toBottomOf="@+id/share_icon"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/share_icon" />
+
+                <ProgressBar
+                    android:id="@+id/progressDetail"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/view1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/type" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#80000000"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/goBack"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="@dimen/toolbarBackButtonPadding"
+                        android:src="@drawable/icon_navigation_back_white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="h,1:1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/inviteToEvent"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:background="@color/purpleText"
+                        android:backgroundTint="@color/purpleText"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingStart="16dp"
+                        android:paddingTop="4dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="4dp"
+                        android:text="Invite"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        app:cornerRadius="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/toolBarTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_name"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center|left"
+                        android:maxLines="1"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/logo_familheey"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toStartOf="@+id/inviteToEvent"
+                        app:layout_constraintStart_toEndOf="@+id/goBack" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F9F9FA"
+        android:fillViewport="true"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/corner_top">
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/scrollTab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabMode="scrollable" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/eventCreatedPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollTab">
+
+            </androidx.viewpager.widget.ViewPager>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/rsvp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_vertical"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="3.5">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGoing5"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/border_edittext"
+            android:padding="4dp"
+            android:text="Going"
+            android:textColor="@color/quantum_grey500"
+            android:textSize="8sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnInterested5"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_toRightOf="@+id/btnGoing5"
+            android:layout_weight="1"
+            android:background="@drawable/border_edittext"
+            android:padding="4dp"
+            android:text="Interested"
+            android:textColor="@color/quantum_grey500"
+            android:textSize="8sp">
+
+        </com.google.android.material.button.MaterialButton>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNotInterested5"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_toRightOf="@+id/btnInterested5"
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:text="Not Interested"
+            android:textColor="@color/quantum_grey500"
+            android:textSize="8sp" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewCal"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="0dp"
+                android:src="@drawable/icon_calendar" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/invite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:backgroundTint="#7E57C2"
+        android:text="Invite"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        app:cornerRadius="8dp">
+
+    </com.google.android.material.button.MaterialButton>
+
+
+    <include layout="@layout/bottom_sheet_event_contacts">
+
+    </include>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

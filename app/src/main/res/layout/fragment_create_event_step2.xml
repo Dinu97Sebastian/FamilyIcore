@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FAFC"
+    android:id="@+id/scrollView"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <include
+            android:id="@+id/toolbarContainer"
+            layout="@layout/item_toolbar_normal_no_notif">
+
+        </include>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editTextHorizontalMargin"
+            android:layout_marginTop="@dimen/firstViewTopMargin"
+            android:layout_marginEnd="@dimen/editTextHorizontalMargin"
+            android:text="Hosted By"
+            android:textColor="@color/labelHintTextColor"
+            android:textSize="@dimen/normalLabelHintTextSize"
+            app:layout_constraintStart_toStartOf="@+id/toolbarContainer"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarContainer" />
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:paddingLeft="1dp"
+            android:text="*"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarContainer" />
+
+        <EditText
+            android:id="@+id/hosted_by"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editTextHorizontalMargin"
+            android:layout_marginTop="@dimen/editTextToLabelSpacing"
+            android:layout_marginEnd="@dimen/editTextHorizontalMargin"
+            android:background="@drawable/round_edittext"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingLeft="@dimen/editTextPaddingHorizontal"
+            android:paddingTop="@dimen/editTextPaddingVertical"
+            android:paddingRight="@dimen/editTextPaddingHorizontal"
+            android:paddingBottom="@dimen/editTextPaddingVertical"
+            android:textColor="@color/normalEditTextTextColor"
+            android:textSize="@dimen/normalEditTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/offlineGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="textView9,locationSelector,venue,textView49"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/editTextVerticalMargin"
+            android:text="Venue"
+            android:textColor="@color/labelHintTextColor"
+            android:textSize="@dimen/normalLabelHintTextSize"
+            app:layout_constraintStart_toStartOf="@+id/hosted_by"
+            app:layout_constraintTop_toBottomOf="@+id/hosted_by" />
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:paddingLeft="1dp"
+            android:text="*"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/hosted_by" />
+
+        <EditText
+            android:id="@+id/venue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/editTextToLabelSpacing"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/round_edittext"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingLeft="@dimen/editTextPaddingHorizontal"
+            android:paddingTop="@dimen/editTextPaddingVertical"
+            android:paddingRight="@dimen/editTextPaddingHorizontal"
+            android:paddingBottom="@dimen/editTextPaddingVertical"
+            android:textColor="@color/normalEditTextTextColor"
+            android:textSize="@dimen/normalEditTextSize"
+            app:layout_constraintEnd_toStartOf="@+id/locationSelector"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/locationSelector"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#3A2262"
+            android:elevation="0dp"
+            android:src="@drawable/ic_location_on_black_24dp"
+            app:cardCornerRadius="10dp"
+            app:elevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/venue"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/hosted_by"
+            app:layout_constraintTop_toTopOf="@+id/venue">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+
+                android:src="@drawable/ic_location_on_black_24dp">
+
+            </ImageView>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/editTextVerticalMargin"
+            android:text="Start date &amp; time"
+            android:textColor="@color/labelHintTextColor"
+            android:textSize="@dimen/normalLabelHintTextSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/venue" />
+
+        <TextView
+            android:id="@+id/textView59"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:paddingLeft="1dp"
+            android:text="*"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/textView10"
+            app:layout_constraintTop_toBottomOf="@+id/venue" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End date &amp; time"
+            android:textColor="@color/labelHintTextColor"
+            android:textSize="@dimen/normalLabelHintTextSize"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10"
+            app:layout_constraintStart_toStartOf="@+id/edtxDateTimeEnd" />
+
+
+        <TextView
+            android:id="@+id/textView69"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:paddingLeft="1dp"
+            android:text="*"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/venue" />
+
+        <EditText
+            android:id="@+id/edtxDateTimeStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/editTextToLabelSpacing"
+            android:background="@drawable/round_edittext"
+            android:focusable="false"
+            android:gravity="center"
+            android:paddingLeft="@dimen/editTextPaddingHorizontal"
+            android:paddingTop="@dimen/editTextPaddingVertical"
+            android:paddingRight="@dimen/editTextPaddingHorizontal"
+            android:paddingBottom="@dimen/editTextPaddingVertical"
+            android:textColor="@color/normalEditTextTextColor"
+            android:textSize="@dimen/normalEditTextSize"
+            app:layout_constraintEnd_toStartOf="@+id/edtxDateTimeEnd"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/textView10"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <EditText
+            android:id="@+id/edtxDateTimeEnd"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="@dimen/editTextHorizontalMargin"
+            android:background="@drawable/round_edittext"
+            android:focusable="false"
+            android:gravity="center"
+            android:paddingLeft="@dimen/editTextPaddingHorizontal"
+            android:paddingTop="@dimen/editTextPaddingVertical"
+            android:paddingRight="@dimen/editTextPaddingHorizontal"
+            android:paddingBottom="@dimen/editTextPaddingVertical"
+            android:textColor="@color/normalEditTextTextColor"
+            android:textSize="@dimen/normalEditTextSize"
+            app:layout_constraintBottom_toBottomOf="@+id/edtxDateTimeStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/edtxDateTimeStart"
+            app:layout_constraintTop_toTopOf="@+id/edtxDateTimeStart" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/onlineGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="labelParticipantPin,dialInNumber,webinar,labelWebinarLink,participantPin,labelDialInNumber,labelWebinarLinkMandatory"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/labelWebinarLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/editTextVerticalMargin"
+            android:text="Webinar Link"
+            android:textColor="@color/labelHintTextColor"
+            android:textSize="@dimen/normalLabelHintTextSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtxDateTimeStart" />
+
+        <TextView
+            android:id="@+id/labelWebinarLinkMandatory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="1dp"
+            android:text="*"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/labelWebinarLink"
+            app:layout_constraintStart_toEndOf="@+id/labelWebinarLink"
+            app:layout_constraintTop_toTopOf="@+id/labelWebinarLink" />
+
+        <EditText
+            android:id="@+id/webinar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/round_edittext"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingLeft="@dimen/editTextPaddingHorizontal"
+            android:paddingTop="@dimen/editTextPaddingVertical"
+            android:paddingRight="@dimen/editTextPaddingHorizontal"
+            android:paddingBottom="@dimen/editTextPaddingVertical"
+            android:textColor="@color/normalEditTextTextColor"
+            android:textSize="@dimen/normalEditTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/labelWebinarLink"
+            app:layout_constraintTop_toBottomOf="@+id/labelWebinarLink" />
+
+        <TextView
+            android:id="@+id/labelDialInNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Dial In Number"
+            android:textColor="@color/labelHintTextColor"
+            android:textSize="@dimen/normalLabelHintTextSize"
+            app:layout_constraintStart_toStartOf="@+id/labelWebinarLink"
+            app:layout_constraintTop_toBottomOf="@+id/participantPin" />
+
+        <EditText
+            android:id="@+id/dialInNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/round_edittext"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingLeft="@dimen/editTextPaddingHorizontal"
+            android:paddingTop="@dimen/editTextPaddingVertical"
+            android:paddingRight="@dimen/editTextPaddingHorizontal"
+            android:paddingBottom="@dimen/editTextPaddingVertical"
+            android:textColor="@color/normalEditTextTextColor"
+            android:textSize="@dimen/normalEditTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/labelDialInNumber"
+            app:layout_constraintTop_toBottomOf="@+id/labelDialInNumber" />
+
+        <TextView
+            android:id="@+id/labelParticipantPin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Participant PIN"
+            android:textColor="@color/labelHintTextColor"
+            android:textSize="@dimen/normalLabelHintTextSize"
+            app:layout_constraintStart_toStartOf="@+id/labelWebinarLink"
+            app:layout_constraintTop_toBottomOf="@+id/webinar" />
+
+        <EditText
+            android:id="@+id/participantPin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/round_edittext"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingLeft="@dimen/editTextPaddingHorizontal"
+            android:paddingTop="@dimen/editTextPaddingVertical"
+            android:paddingRight="@dimen/editTextPaddingHorizontal"
+            android:paddingBottom="@dimen/editTextPaddingVertical"
+            android:textColor="@color/normalEditTextTextColor"
+            android:textSize="@dimen/normalEditTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/labelParticipantPin"
+            app:layout_constraintTop_toBottomOf="@+id/labelParticipantPin" />
+
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/editTextVerticalMargin"
+            android:text="Description"
+            android:textColor="@color/labelHintTextColor"
+            android:textSize="@dimen/normalLabelHintTextSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialInNumber" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="100sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/round_edittext"
+            android:ems="10"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:padding="@dimen/editTextPaddingHorizontal"
+            android:textColor="@color/normalEditTextTextColor"
+            android:textSize="@dimen/normalEditTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButtonDone"
+            style="@style/CustomButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:paddingStart="48dp"
+            android:paddingEnd="48dp"
+            android:text="Done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/url"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUrlCheck">
+
+        </com.google.android.material.button.MaterialButton>
+
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/editTextVerticalMargin"
+            android:text="RSVP required"
+            android:textColor="@color/labelHintTextColor"
+            android:textSize="@dimen/normalLabelHintTextSize"
+            app:layout_constraintStart_toStartOf="@+id/description"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@id/textView12">
+
+            <RadioButton
+                android:id="@+id/rsvp_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Yes">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/rsvp_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16sp"
+                android:text="No">
+
+            </RadioButton>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/editTextVerticalMargin"
+            android:text="Event page URL"
+            android:textColor="@color/labelHintTextColor"
+            android:textSize="@dimen/normalLabelHintTextSize"
+            app:layout_constraintStart_toStartOf="@+id/radioGroup2"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/editTextToLabelSpacing"
+            android:text="https://familheey.com/events/ "
+            android:textSize="@dimen/urlLabelTextSize"
+            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+
+        <EditText
+            android:id="@+id/url"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/round_edittext"
+            android:drawablePadding="8dp"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:paddingLeft="@dimen/editTextPaddingHorizontal"
+            android:paddingRight="@dimen/editTextPaddingHorizontal"
+            android:textSize="@dimen/urlEditTextTextSize"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView14"
+            app:layout_constraintEnd_toEndOf="@+id/description"
+            app:layout_constraintStart_toEndOf="@+id/textView14"
+            app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textViewUrlCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="2dp"
+            android:text="Check availabillity"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="@+id/url"
+            app:layout_constraintTop_toBottomOf="@+id/url" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

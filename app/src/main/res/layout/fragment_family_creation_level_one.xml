@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:clickable="true"
+    android:fillViewport="true"
+    tools:context=".Fragments.FamilyCreationLevelOneFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/labelBasic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Basic"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/roboto"
+            android:text="Details"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/labelBasic"
+            app:layout_constraintStart_toEndOf="@+id/labelBasic"
+            app:layout_constraintTop_toTopOf="@+id/labelBasic" />
+
+        <TextView
+            android:id="@+id/labelFamilyName"
+            style="@style/textFieldLabelColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/roboto"
+            android:text="Family Name"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/labelBasic"
+            app:layout_constraintTop_toBottomOf="@+id/labelBasic" />
+
+        <EditText
+            android:id="@+id/familyName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_small_curved_light_grey"
+            android:fontFamily="@font/roboto"
+            android:inputType="textCapSentences|textPersonName"
+            android:maxLength="150"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelFamilyName" />
+
+        <TextView
+            android:id="@+id/labelFamilyType"
+            style="@style/textFieldLabelColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/roboto"
+            android:text="Family Type"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/familyName"
+            app:layout_constraintTop_toBottomOf="@+id/familyName" />
+
+        <EditText
+            android:id="@+id/familyType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_small_curved_light_grey"
+            android:drawableRight="@drawable/ccp_down_arrow"
+            android:fontFamily="@font/roboto"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelFamilyType" />
+
+        <TextView
+            android:id="@+id/labelBasicRegionOrLocation"
+            style="@style/textFieldLabelColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/roboto"
+            android:text="Base Region or Location"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/familyType"
+            app:layout_constraintTop_toBottomOf="@+id/edtxOther" />
+
+        <EditText
+            android:id="@+id/regionOrLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_small_curved_light_grey"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelBasicRegionOrLocation" />
+
+        <EditText
+            android:id="@+id/edtxOther"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_small_curved_light_grey"
+            android:fontFamily="@font/roboto"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName"
+            android:maxLength="150"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/familyType"
+            app:layout_constraintTop_toBottomOf="@+id/familyType" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/proceed"
+            style="@style/CustomButtonWithNextIcon"
+            android:layout_width="@dimen/family_creation_buttonwidth"
+            android:layout_height="0dp"
+            android:layout_marginTop="146dp"
+            android:layout_marginEnd="16dp"
+            android:text="Continue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/regionOrLocation" />
+
+        <TextView
+            android:id="@+id/skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:fontFamily="@font/roboto"
+            android:text="Skip"
+            android:visibility="gone"
+            android:layout_marginLeft="50dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/regionOrLocation" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

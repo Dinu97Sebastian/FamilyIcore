@@ -1,0 +1,120 @@
+{
+  "project_info": {
+    "project_number": "722299379881",
+    "firebase_url": "https://familheeystaging-default-rtdb.firebaseio.com",
+    "project_id": "familheeystaging",
+    "storage_bucket": "familheeystaging.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722299379881:android:84d7271b02c494feac49b8",
+        "android_client_info": {
+          "package_name": "com.familheey.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722299379881-alm6n52o38knlus44hvl09f8aqash80b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRIy0Pyb-NWFIsiLBU5-c5Q7NADxHFq5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722299379881-alm6n52o38knlus44hvl09f8aqash80b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "722299379881-97s48dai2ejrntt8bil1l9tgp287lkr4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.familheey.app",
+                "app_store_id": "1485617876"
+              }
+            }
+          ]
+        }
+      }
+    },
+{
+      "client_info": {
+       "mobilesdk_app_id": "1:722299379881:android:84d7271b02c494feac49b8",
+        "android_client_info": {
+          "package_name": "com.familheey.app.dev"
+        }
+      },
+      "oauth_client": [
+        {
+         "client_id": "722299379881-alm6n52o38knlus44hvl09f8aqash80b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRIy0Pyb-NWFIsiLBU5-c5Q7NADxHFq5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+            "client_id": "722299379881-alm6n52o38knlus44hvl09f8aqash80b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "722299379881-alm6n52o38knlus44hvl09f8aqash80b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.familheey.com"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722299379881:android:84d7271b02c494feac49b8",
+        "android_client_info": {
+          "package_name": "com.familheey.app.staging"
+        }
+      },
+      "oauth_client": [
+        {
+         "client_id": "722299379881-alm6n52o38knlus44hvl09f8aqash80b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+           "current_key": "AIzaSyBRIy0Pyb-NWFIsiLBU5-c5Q7NADxHFq5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+           "client_id": "722299379881-alm6n52o38knlus44hvl09f8aqash80b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+               "client_id": "722299379881-alm6n52o38knlus44hvl09f8aqash80b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.familheey.com"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

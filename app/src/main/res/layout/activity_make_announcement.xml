@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/announce"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFBFC">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Post.CreatePostActivity">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/goBack"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="@string/app_name"
+                    android:padding="@dimen/toolbarBackButtonPadding"
+                    android:src="@drawable/ic_return"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="h,1:1"
+                    app:layout_constraintStart_toStartOf="@+id/toolBarTitle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/toolBarTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:gravity="center"
+                    android:scaleType="centerInside"
+                    android:text="Make an announcement"
+                    android:textColor="#343a40"
+                    android:textSize="28sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <TextView
+            android:id="@+id/announce_this"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="Announce this to"
+            android:textColor="@color/black80"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <Spinner
+            android:id="@+id/announce_spinner"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/round_edittext"
+            android:paddingStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/announce_this"
+            app:layout_constraintTop_toBottomOf="@+id/announce_this" />
+
+        <TextView
+            android:id="@+id/what_to_announce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:text="What do you  want to announce?"
+            android:textColor="@color/black80"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/announce_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/announce_spinner" />
+
+        <TextView
+            android:id="@+id/what_to_post_descrption"
+            style="@style/CustomEditTextForLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:lines="5"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="@+id/announce_spinner"
+            app:layout_constraintStart_toStartOf="@+id/what_to_announce"
+            app:layout_constraintTop_toBottomOf="@+id/what_to_announce" />
+
+        <TextView
+            android:id="@+id/attach_photo_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Attach Photos/Videos(optional)"
+            android:textColor="@color/black80"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/what_to_post_descrption"
+            app:layout_constraintTop_toBottomOf="@+id/what_to_post_descrption" />
+
+        <ImageView
+            android:id="@+id/attachment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round_edittext"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="@+id/attach_photo_video"
+            app:layout_constraintTop_toBottomOf="@+id/attach_photo_video"
+            app:srcCompat="@drawable/attachment_black" />
+
+        <TextView
+            android:id="@+id/no_files"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="No files attached"
+            app:layout_constraintBottom_toBottomOf="@+id/attachment"
+            app:layout_constraintStart_toEndOf="@+id/attachment"
+            app:layout_constraintTop_toTopOf="@+id/attachment" />
+
+        <TextView
+            android:id="@+id/enable_sharing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Enable sharing"
+            android:textColor="@color/black80"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/attachment"
+            app:layout_constraintTop_toBottomOf="@+id/attachment" />
+
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Switch"
+            app:layout_constraintBottom_toBottomOf="@+id/enable_sharing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/enable_sharing" />
+
+        <TextView
+            android:id="@+id/enable_convrstion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Enable conversation"
+            android:textColor="@color/black80"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/enable_sharing"
+            app:layout_constraintTop_toBottomOf="@+id/enable_sharing" />
+
+        <Switch
+            android:id="@+id/switch3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="17dp"
+            android:text="Switch"
+            app:layout_constraintBottom_toBottomOf="@+id/enable_convrstion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/enable_convrstion" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/buttoncolor"
+            android:text="Post"
+            app:layout_constraintEnd_toEndOf="@+id/switch3"
+            app:layout_constraintStart_toStartOf="@+id/switch3"
+            app:layout_constraintTop_toBottomOf="@+id/enable_convrstion" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

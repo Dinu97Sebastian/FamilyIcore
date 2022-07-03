@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginTop="8dp"
+    app:cardUseCompatPadding="false">
+
+    <ImageView
+        android:id="@+id/familyLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/family_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/familyLocation"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/familyName" />
+
+    <TextView
+        android:id="@+id/familyName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Family Name"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/join"
+        app:layout_constraintStart_toEndOf="@+id/familyLogo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/membersCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Member"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/familyName"
+        app:layout_constraintStart_toStartOf="@+id/familyName"
+        app:layout_constraintTop_toBottomOf="@+id/familyName" />
+
+    <TextView
+        android:id="@+id/familyLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Trivandrum"
+        android:textColor="@color/label"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/familyName"
+        app:layout_constraintStart_toStartOf="@+id/membersCount"
+        app:layout_constraintTop_toBottomOf="@+id/membersCount" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/join"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/join"
+        android:textAllCaps="false"
+        android:textColor="@color/greenTextColor"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/familyLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/familyLogo"
+        app:strokeColor="@color/greenTextColor" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/greenTextColor"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/join"
+        app:layout_constraintEnd_toEndOf="@+id/join"
+        app:layout_constraintStart_toStartOf="@+id/join"
+        app:layout_constraintTop_toTopOf="@+id/join" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    android:fitsSystemWindows="true"
+    tools:context="com.familheey.app.Need.ContributorsListingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6">
+
+        <include
+            android:id="@+id/toolbarIncluder"
+            layout="@layout/item_toolbar_animated_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/shimmerSupporter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="itemStatus,contributorsCount,contributorsList,labelOf,barrier,itemName,labelContributorsCount,itemsHave,totalItems" />
+
+        <TextView
+            android:id="@+id/itemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="#212121"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/barrier"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarIncluder" />
+
+        <TextView
+            android:id="@+id/labelContributorsCount"
+            android:layout_width="0dp"
+            android:layout_height="17dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/quantum_grey"
+            app:layout_constraintBaseline_toBaselineOf="@+id/contributorsCount"
+            app:layout_constraintEnd_toEndOf="@+id/itemName"
+            app:layout_constraintStart_toEndOf="@+id/contributorsCount" />
+
+        <TextView
+            android:id="@+id/contributorsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/quantum_grey"
+            app:layout_constraintStart_toStartOf="@+id/itemName"
+            app:layout_constraintTop_toBottomOf="@+id/itemName" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="start"
+            app:constraint_referenced_ids="itemStatus,itemsHave"
+            tools:layout_editor_absoluteX="411dp" />
+
+        <TextView
+            android:id="@+id/totalItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="#170b2b"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/itemName" />
+
+        <TextView
+            android:id="@+id/labelOf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" of "
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/totalItems"
+            app:layout_constraintEnd_toStartOf="@+id/totalItems" />
+
+        <TextView
+            android:id="@+id/itemsHave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#343a40"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/labelOf"
+            app:layout_constraintEnd_toStartOf="@+id/labelOf" />
+
+        <TextView
+            android:id="@+id/itemStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Still needed"
+            android:textColor="@color/quantum_grey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/totalItems"
+            app:layout_constraintTop_toBottomOf="@+id/totalItems" />
+
+        <TextView
+            android:id="@+id/txt_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:text="Completed"
+            android:textColor="@color/greenTextColor"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/totalItems"
+            app:layout_constraintTop_toBottomOf="@+id/totalItems" />
+
+        <LinearLayout
+            android:id="@+id/itemStatus1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/itemStatus"
+            app:layout_constraintTop_toBottomOf="@+id/itemStatus">
+
+            <TextView
+                android:id="@+id/txt_receive_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/quantum_grey"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txt_rceived_amt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#343a40"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/itemStatus2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/itemStatus1"
+            app:layout_constraintTop_toBottomOf="@+id/itemStatus1">
+
+            <TextView
+                android:id="@+id/txt_pledge_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/quantum_grey"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txt_pledge_amt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#343a40"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contributorsList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemStatus2"
+            tools:itemCount="6"
+            tools:listitem="@layout/item_needs_contributor" />
+
+        <com.familheey.app.CustomViews.TextViews.SemiBoldTextView
+            android:id="@+id/emptyResultText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No results to show"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerLoader"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbarIncluder"
+            app:shimmer_base_color="#F6F6F6"
+            app:shimmer_duration="1000">
+
+            <include layout="@layout/activity_contributors_listing_shimmer" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/thanks_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:visibility="gone"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include layout="@layout/item_need_thanks_post" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/contributionSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include layout="@layout/item_need_pledge_now" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/contributedSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include layout="@layout/item_need_contribution_pledged" />
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

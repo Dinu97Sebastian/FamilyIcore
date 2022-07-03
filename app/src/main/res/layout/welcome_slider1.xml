@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+        <View
+            android:id="@+id/view12"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="#623f9b"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/group_1739"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+         >
+         <TextView
+             android:id="@+id/textView65"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Welcome to"
+             android:fontFamily="@font/sf_pro_display"
+             android:textColor="@color/labelColor1_5"
+             android:gravity="center"
+             android:textSize="27sp"
+             />
+
+         <TextView
+             android:id="@+id/textView66"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="15dp"
+             android:fontFamily="@font/sf_ui_display_bold"
+             android:gravity="center"
+             android:text="Familheey!"
+             android:textColor="@color/labelColor1_5"
+             android:textSize="40sp" />
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="25dp"
+             android:orientation="horizontal"
+             >
+
+             <TextView
+                 android:id="@+id/textView67"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginRight="5dp"
+                 android:fontFamily="@font/sf_ui_display_bold"
+                 android:text="connect"
+                 android:textColor="@color/labelColor1_5"
+                 android:textSize="17dp" />
+             <ImageView
+                 android:layout_width="10dp"
+                 android:layout_height="10dp"
+                 android:layout_marginRight="5dp"
+                 android:layout_marginLeft="5dp"
+                 android:layout_marginTop="8dp"
+                 android:src="@drawable/online_indicator" />
+
+             <TextView
+                 android:id="@+id/textView68"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="5dp"
+                 android:layout_marginRight="5dp"
+                 android:fontFamily="@font/sf_ui_display_bold"
+                 android:text="engage"
+                 android:textColor="@color/labelColor1_5"
+                 android:textSize="17sp" />
+             <ImageView
+                 android:layout_width="10dp"
+                 android:layout_height="10dp"
+                 android:layout_marginRight="5dp"
+                 android:layout_marginLeft="5dp"
+                 android:layout_marginTop="8dp"
+                 android:src="@drawable/online_indicator" />
+
+             <TextView
+                 android:id="@+id/textView69"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="5dp"
+                 android:fontFamily="@font/sf_ui_display_bold"
+                 android:text="grow"
+                 android:textColor="@color/labelColor1_5"
+                 android:textSize="17sp" />
+         </LinearLayout>
+         <TextView
+             android:id="@+id/textView70"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="with your community now"
+             android:fontFamily="@font/roboto_medium"
+             android:gravity="center"
+             android:textSize="17sp"
+             />
+     </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

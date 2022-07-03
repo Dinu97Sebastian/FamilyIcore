@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    tools:context=".Fragments.FamilyDashboard.AboutUsFragment">
+    <include
+        android:id="@+id/edt_text"
+        layout="@layout/toolbar_with_search_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:id="@+id/intro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/background_light_curved_filled_light_grey"
+                android:paddingLeft="24dp"
+                android:paddingTop="4dp"
+                android:paddingRight="24dp"
+                android:paddingBottom="4dp"
+                android:text="Intro"
+                android:textColor="@color/subTitleColor"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/familyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Family"
+                android:visibility="invisible"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/intro"
+                app:layout_constraintTop_toBottomOf="@+id/intro" />
+
+            <ImageView
+                android:id="@+id/familyNameUnderLine"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@color/titleColor"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/familyName"
+                app:layout_constraintStart_toStartOf="@+id/familyName"
+                app:layout_constraintTop_toBottomOf="@+id/familyName" />
+
+            <TextView
+                android:id="@+id/labelIntroduction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Introduction"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/familyName"
+                app:layout_constraintStart_toStartOf="@+id/intro" />
+
+            <ImageView
+                android:id="@+id/editFamily"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/icon_edit_pencil"
+                app:layout_constraintBottom_toBottomOf="@+id/labelIntroduction"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/labelIntroduction"
+                app:layout_constraintTop_toTopOf="@+id/labelIntroduction" />
+
+            <TextView
+                android:id="@+id/familyIntroduction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="0dp"
+                android:lineSpacingExtra="6dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/familyName" />
+
+            <TextView
+                android:id="@+id/historyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="History"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/intro"
+                app:layout_constraintTop_toBottomOf="@+id/familyIntroduction" />
+
+            <ImageView
+                android:id="@+id/historyNameUnderLine"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@color/titleColor"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/historyName"
+                app:layout_constraintStart_toStartOf="@+id/historyName"
+                app:layout_constraintTop_toBottomOf="@+id/historyName" />
+
+
+            <ImageView
+                android:id="@+id/editHistory"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/icon_edit_pencil"
+                app:layout_constraintBottom_toBottomOf="@+id/historyName"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/historyName"
+                app:layout_constraintTop_toTopOf="@+id/historyName" />
+
+
+            <WebView
+                android:id="@+id/webview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:lineSpacingExtra="6dp"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/historyName"
+                app:layout_constraintTop_toBottomOf="@+id/historyNameUnderLine" />
+
+
+            <Button
+                android:id="@+id/btn_add_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/historyNameUnderLine" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

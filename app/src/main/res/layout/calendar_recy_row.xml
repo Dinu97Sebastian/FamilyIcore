@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="0dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/familyLogoContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar_male"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/familyLocation"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/familyName">
+
+            <ImageView
+                android:id="@+id/familyLogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/family_dashboard_background" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/familyName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/titleColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/familyLogoContainer"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelCreatedBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By"
+            android:textColor="@color/subTitleColor"
+            app:layout_constraintStart_toStartOf="@+id/familyName"
+            app:layout_constraintTop_toBottomOf="@+id/familyName" />
+
+        <TextView
+            android:id="@+id/createdBy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:text="Aswin"
+            android:textColor="@color/titleColor"
+            app:layout_constraintBottom_toBottomOf="@+id/labelCreatedBy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/labelCreatedBy"
+            app:layout_constraintTop_toTopOf="@+id/labelCreatedBy" />
+
+        <TextView
+            android:id="@+id/familyType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Member"
+            android:textColor="@color/subTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/createdBy"
+            app:layout_constraintStart_toStartOf="@+id/familyName"
+            app:layout_constraintTop_toBottomOf="@+id/labelCreatedBy" />
+
+        <ImageView
+            android:id="@+id/locationIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="4dp"
+            android:src="@drawable/icon_location_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/familyLocation"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@+id/familyName"
+            app:layout_constraintTop_toTopOf="@+id/familyLocation" />
+
+        <TextView
+            android:id="@+id/familyLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Trivandrum"
+            android:textColor="@color/subTitleColor"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/familyType"
+            app:layout_constraintStart_toEndOf="@+id/locationIcon"
+            app:layout_constraintTop_toBottomOf="@+id/familyType" />
+
+
+        <ImageView
+            android:id="@+id/timeicon"
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:paddingEnd="4dp"
+            android:src="@drawable/ic_access_time_black_24dp"
+            app:tint="@color/quantum_grey600"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@+id/familyLogoContainer"
+            app:layout_constraintTop_toBottomOf="@+id/familyLogoContainer"
+            app:layout_constraintTop_toTopOf="@+id/time" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:text="11:00 am - 3:00 pm"
+            android:textColor="@color/quantum_grey600"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+            app:layout_constraintStart_toEndOf="@+id/timeicon"
+            app:layout_constraintTop_toBottomOf="@+id/familyLogoContainer" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

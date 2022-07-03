@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="0dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginTop="8dp"
+    app:cardUseCompatPadding="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/familyLogo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/avatar_male"
+            app:layout_constraintBottom_toBottomOf="@+id/familyLocation"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/familyName" />
+
+        <TextView
+            android:id="@+id/familyName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Family Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/familyLogo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/familyCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Member"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/familyName"
+            app:layout_constraintTop_toBottomOf="@+id/familyName" />
+
+        <ImageView
+            android:id="@+id/locationIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/icon_location_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/familyLocation"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@+id/familyName"
+            app:layout_constraintTop_toTopOf="@+id/familyLocation" />
+
+        <TextView
+            android:id="@+id/familyLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Trivandrum"
+            android:textColor="@color/label"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/locationIcon"
+            app:layout_constraintTop_toBottomOf="@+id/familyCategory" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/join"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:backgroundTint="@color/greenTextColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/join"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="5dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/membersCount"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/join"
+            app:layout_constraintEnd_toEndOf="@+id/join"
+            app:layout_constraintStart_toStartOf="@+id/join"
+            app:layout_constraintTop_toTopOf="@+id/join" />
+
+        <TextView
+            android:id="@+id/membersCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5K"
+            android:textColor="@color/greenTextColor"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/familyLogo"
+            app:layout_constraintTop_toBottomOf="@+id/familyLogo" />
+
+        <TextView
+            android:id="@+id/eventsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="12"
+            android:textColor="@color/greenTextColor"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/membersCount"
+            app:layout_constraintStart_toEndOf="@+id/labelMembersCount"
+            app:layout_constraintTop_toTopOf="@+id/membersCount" />
+
+        <TextView
+            android:id="@+id/labeleventsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="known"
+            app:layout_constraintBottom_toBottomOf="@+id/membersCount"
+            app:layout_constraintStart_toEndOf="@+id/eventsCount"
+            app:layout_constraintTop_toTopOf="@+id/membersCount" />
+
+        <TextView
+            android:id="@+id/labelMembersCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="members"
+            app:layout_constraintBottom_toBottomOf="@+id/membersCount"
+            app:layout_constraintStart_toEndOf="@+id/membersCount"
+            app:layout_constraintTop_toTopOf="@+id/membersCount" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

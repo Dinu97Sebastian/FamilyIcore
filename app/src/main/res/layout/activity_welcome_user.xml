@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#623f9b"
+    android:fillViewport="true">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="#623f9b"
+        android:scaleType="matrix"
+        app:srcCompat="@drawable/group_1941" />
+<TextView
+    android:id="@+id/heading"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/imageView15"
+    android:layout_centerHorizontal="true"
+    android:text="Welcome, Dinu Sebastian!"
+    android:gravity="center"
+    android:fontFamily="@font/sf_ui_display_bold"
+    android:textColor="@android:color/white"
+    android:textSize="25sp"
+    />
+    <TextView
+        android:id="@+id/subheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading"
+        android:layout_centerHorizontal="true"
+        android:text="Everything is ready now!"
+        android:fontFamily="@font/sf_pro_display"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        />
+
+    <Button
+        android:id="@+id/begin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:text="Let's Begin"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="48dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintVertical_bias="0.5"
+        android:layout_below="@+id/subheading"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>
+</ScrollView>

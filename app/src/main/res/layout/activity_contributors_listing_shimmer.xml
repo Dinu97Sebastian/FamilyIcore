@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context="com.familheey.app.Need.ContributorsListingActivity">
+
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/platinum"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/barrier"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelContributorsCount"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="2dp"
+        android:background="@color/platinum"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/quantum_grey"
+        app:layout_constraintBaseline_toBaselineOf="@+id/contributorsCount"
+        app:layout_constraintEnd_toEndOf="@+id/itemName"
+        app:layout_constraintStart_toEndOf="@+id/contributorsCount" />
+
+    <TextView
+        android:id="@+id/contributorsCount"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@color/platinum"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/quantum_grey"
+        app:layout_constraintStart_toStartOf="@+id/itemName"
+        app:layout_constraintTop_toBottomOf="@+id/itemName" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="itemStatus,itemsHave"
+        tools:layout_editor_absoluteX="411dp" />
+
+    <TextView
+        android:id="@+id/totalItems"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@color/platinum"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itemName" />
+
+    <TextView
+        android:id="@+id/labelOf"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:background="@color/platinum"
+        app:layout_constraintBaseline_toBaselineOf="@+id/totalItems"
+        app:layout_constraintEnd_toStartOf="@+id/totalItems" />
+
+    <TextView
+        android:id="@+id/itemsHave"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:background="@color/platinum"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelOf"
+        app:layout_constraintEnd_toStartOf="@+id/labelOf" />
+
+    <TextView
+        android:id="@+id/itemStatus"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:background="@color/platinum"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/quantum_grey"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/totalItems"
+        app:layout_constraintTop_toBottomOf="@+id/totalItems" />
+
+    <LinearLayout
+        android:id="@+id/contributorsList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contributorsCount"
+        android:orientation="vertical" >
+        <include
+            layout="@layout/item_needs_contributor_shimmer"/>
+        <include
+            layout="@layout/item_needs_contributor_shimmer"/>
+        <include
+            layout="@layout/item_needs_contributor_shimmer"/>
+        <include
+            layout="@layout/item_needs_contributor_shimmer"/>
+        <include
+            layout="@layout/item_needs_contributor_shimmer"/>
+        <include
+            layout="@layout/item_needs_contributor_shimmer"/>
+        <include
+            layout="@layout/item_needs_contributor_shimmer"/>
+        <include
+            layout="@layout/item_needs_contributor_shimmer"/>
+        <include
+            layout="@layout/item_needs_contributor_shimmer"/>
+        <include
+            layout="@layout/item_needs_contributor_shimmer"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dialogs.DocumentsAccessDialog">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/docAccess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Onlyyou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="25dp"
+                android:text="Only you"
+                android:textSize="25dp"
+                app:layout_constraintStart_toEndOf="@+id/Locimg1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Private"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Private - only you can access"
+                app:layout_constraintStart_toStartOf="@+id/Onlyyou"
+                app:layout_constraintTop_toBottomOf="@+id/Onlyyou" />
+
+            <TextView
+                android:id="@+id/Everyone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Everyone in the family"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="@+id/Private"
+                app:layout_constraintTop_toBottomOf="@+id/Private" />
+
+            <TextView
+                android:id="@+id/Infamily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Can access everyone in the family"
+                app:layout_constraintStart_toStartOf="@+id/Everyone"
+                app:layout_constraintTop_toBottomOf="@+id/Everyone" />
+
+            <TextView
+                android:id="@+id/Selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Selected members"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="@+id/Infamily"
+                app:layout_constraintTop_toBottomOf="@+id/Infamily" />
+
+            <TextView
+                android:id="@+id/onlysome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shared with 20 members"
+                app:layout_constraintStart_toStartOf="@+id/Selected"
+                app:layout_constraintTop_toBottomOf="@+id/Selected" />
+
+            <ImageView
+                android:id="@+id/Locimg1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:src="@android:drawable/ic_lock_idle_lock"
+                app:layout_constraintBottom_toBottomOf="@+id/Private"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/Onlyyou" />
+
+            <ImageView
+                android:id="@+id/Locimg2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@android:drawable/ic_lock_idle_lock"
+                app:layout_constraintBottom_toBottomOf="@+id/Infamily"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintStart_toStartOf="@+id/Locimg1"
+                app:layout_constraintTop_toTopOf="@+id/Everyone" />
+
+            <ImageView
+                android:id="@+id/Locimg3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@android:drawable/ic_lock_idle_lock"
+                app:layout_constraintBottom_toBottomOf="@+id/onlysome"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintStart_toStartOf="@+id/Locimg2"
+                app:layout_constraintTop_toTopOf="@+id/Selected" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

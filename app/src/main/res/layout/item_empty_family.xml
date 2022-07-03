@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addFamilyLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelTouchToAddMembers">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createFamilyNow"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Create Family"
+            android:textAllCaps="true"
+            android:textColor="@color/greenTextColor"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSearchFamily"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSearchFamily"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/greenTextColor"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Search Family"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/createFamilyNow"
+            app:layout_constraintStart_toEndOf="@+id/createFamilyNow"
+            app:layout_constraintTop_toTopOf="@+id/createFamilyNow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/labelTouchToAddMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Search for families here"
+        android:textColor="@color/greenTextColor"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelYouveNotAddedMembersYet" />
+
+    <TextView
+        android:id="@+id/labelYouveNotAddedMembersYet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/roboto"
+        android:text="You've not added families yet!"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noMembersImage" />
+
+    <ImageView
+        android:id="@+id/noMembersImage"
+        android:layout_width="0dp"
+
+        android:layout_height="200dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/empty_family_indicator"
+        app:layout_constraintBottom_toTopOf="@+id/labelYouveNotAddedMembersYet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

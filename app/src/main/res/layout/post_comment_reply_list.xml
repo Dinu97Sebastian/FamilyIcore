@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutRight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:focusable="true"
+        android:visibility="visible"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_prof"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:visibility="visible"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/image_received"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/avatar_male"
+                android:scaleType="centerCrop">
+
+            </ImageView>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/text_message_name_received"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Eugene Rodrinquez"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/card_prof"
+            app:layout_constraintTop_toTopOf="@+id/card_prof" />
+
+
+        <LinearLayout
+            android:id="@+id/text_message_body_received_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:focusable="false"
+            android:layout_marginBottom="18dp"
+            android:maxWidth="320dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/text_message_name_received"
+            app:layout_constraintTop_toBottomOf="@+id/text_message_name_received">
+
+            <LinearLayout
+                android:id="@+id/qoute_msg_received_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minWidth="200dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+
+                    android:padding="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/qoute" />
+
+                <TextView
+                    android:id="@+id/text_qoute_received"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:paddingRight="6dp"
+                    android:ellipsize="end"
+                    android:maxWidth="300dp"
+                    android:minWidth="60dp"
+                    android:textStyle="italic" />
+
+                <TextView
+
+                    android:id="@+id/text_qoute_name_date_received"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="Liju ps, 2 weeks ago"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@color/white" />
+            </LinearLayout>
+
+            <!--<com.luseen.autolinklibrary.AutoLinkTextView
+                android:id="@+id/text_message_body_received"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColorLink="@color/buttoncolor"
+                android:focusable="true"
+                android:gravity="left"
+                android:maxWidth="230dp"
+                android:minWidth="80dp"
+                android:paddingLeft="3dp"
+                android:paddingTop="8dp"
+                android:paddingRight="12dp"
+                android:text="hi man, Message writing begins by writing the word “Message” in bold and capitals. It is written in the middle of the line. This is done in order to catch the attention of the person for whom the message is drafted."
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_message_name_received"
+                app:layout_constraintTop_toBottomOf="@+id/text_message_name_received" />-->
+            <TextView
+                android:id="@+id/text_reply_received"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColorLink="@color/buttoncolor"
+                android:focusable="true"
+                android:gravity="left"
+                android:maxWidth="230dp"
+                android:minWidth="80dp"
+                android:paddingLeft="3dp"
+                android:paddingTop="8dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="15dp"
+                android:textColor="#000"
+                android:text="hi man, Message writing begins by writing the word “Message” in bold and capitals. It is written in the middle of the line. This is done in order to catch the attention of the person for whom the message is drafted."
+
+                android:textSize="16dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_message_name_received"
+                app:layout_constraintTop_toBottomOf="@+id/text_message_name_received" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAttachLeft"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="18dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_message_name_received"
+            app:layout_constraintTop_toBottomOf="@id/text_message_name_received">
+
+            <ImageView
+                android:id="@+id/imgAttachmentReceived"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/imgPlayIconLeft"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="24dp"
+                android:src="@drawable/exo_icon_play"
+                android:visibility="gone" />
+
+
+            <View
+                android:id="@+id/img_count_left_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#66000000"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/img_count_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtTimeLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Just now"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/text_message_name_received"
+            app:layout_constraintTop_toBottomOf="@+id/text_message_name_received"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

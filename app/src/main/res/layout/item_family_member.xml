@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="2dp"
+    android:layout_marginTop="8dp"
+    app:cardUseCompatPadding="false">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="12dp">
+
+    <ImageView
+        android:id="@+id/memberImage"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/avatar_male"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/memberName" />
+
+
+
+        <ImageView
+            android:id="@+id/memberTypeBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#1A000000"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/memberImage"
+            app:layout_constraintStart_toStartOf="@+id/memberImage"
+            app:layout_constraintTop_toTopOf="@+id/memberType" />
+
+        <TextView
+            android:id="@+id/memberType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_text"
+            android:backgroundTint="#80000000"
+            android:gravity="center"
+            android:text="Member"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/memberImage"
+            app:layout_constraintEnd_toEndOf="@+id/memberImage"
+            app:layout_constraintStart_toStartOf="@+id/memberImage" />
+
+
+
+    <TextView
+        android:id="@+id/memberName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Kelly Howard"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/memberOptions"
+        app:layout_constraintStart_toEndOf="@+id/memberImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/addRole"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginStart="4dp"
+        android:text="Add Role"
+        android:textColor="@color/greenTextColor"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/memberRole"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addRoleImage"
+        app:layout_constraintTop_toBottomOf="@+id/memberName" />
+
+    <ImageView
+        android:id="@+id/addRoleImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/icon_edit_pencil"
+        app:tint="@color/greenTextColor"
+        android:layout_marginRight="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/addRole"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@+id/memberName"
+        app:layout_constraintTop_toTopOf="@+id/addRole" />
+
+    <TextView
+        android:id="@+id/memberLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Member since July 2019"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/addRoleImage"
+        app:layout_constraintTop_toBottomOf="@+id/addRole" />
+
+    <ImageView
+        android:id="@+id/memberOptions"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/icon_options"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/memberName" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

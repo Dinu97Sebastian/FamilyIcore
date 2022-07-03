@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FAFBFC">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fullview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Post.CreatePostActivity">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/goBack"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/toolbarBackButtonPadding"
+                        android:src="@drawable/ic_return"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="h,1:1"
+                        app:layout_constraintStart_toStartOf="@+id/toolBarTitle"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/toolBarTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_name"
+                        android:gravity="center"
+                        android:scaleType="centerInside"
+                        android:text="Update"
+                        android:textColor="#343a40"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <LinearLayout
+                android:id="@+id/family_selection_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/toolbar"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+                <LinearLayout
+                    android:id="@+id/familyview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Selected Families"
+                        android:textColor="@color/black80"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="5dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/btn_edit"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/icon_edit_pencil"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/txt_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/black80"
+                            android:textSize="12dp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/post_this"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="What do you want to post?"
+                android:textColor="@color/black80"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/family_selection_view"
+                app:layout_constraintTop_toBottomOf="@+id/family_selection_view" />
+
+            <EditText
+                android:id="@+id/what_to_post_descrption"
+                style="@style/CustomEditTextForLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="top"
+                android:maxLines="10"
+                android:minLines="4"
+                android:inputType="textCapSentences|textMultiLine"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/post_this"
+                app:layout_constraintTop_toBottomOf="@+id/post_this" />
+
+            <TextView
+                android:id="@+id/enable_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="Enable rating"
+                android:textSize="16sp"
+                android:textColor="@color/black80"
+                app:layout_constraintStart_toStartOf="@+id/what_to_post_descrption"
+                app:layout_constraintTop_toBottomOf="@id/what_to_post_descrption"/>
+
+            <Switch
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="17dp"
+                android:text=""
+                android:checked="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/enable_rating"
+                app:layout_constraintBottom_toBottomOf="@+id/enable_rating"/>
+
+            <TextView
+                android:id="@+id/post_photo_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="Post Photos/Videos (Optional)"
+                android:textColor="@color/black80"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/what_to_post_descrption"
+                app:layout_constraintTop_toBottomOf="@+id/enable_rating" />
+
+            <LinearLayout
+
+                android:id="@+id/attachment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_edittext"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="@+id/post_photo_video"
+                app:layout_constraintTop_toBottomOf="@+id/post_photo_video">
+
+                <ImageView
+                    android:id="@+id/btn_attach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_edittext"
+                    android:padding="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/post_photo_video"
+                    app:layout_constraintTop_toBottomOf="@+id/post_photo_video"
+                    app:srcCompat="@drawable/attachment_black" />
+
+                <TextView
+                    android:id="@+id/no_files"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="No files attached"
+                    app:layout_constraintBottom_toBottomOf="@+id/attachment"
+                    app:layout_constraintStart_toEndOf="@+id/attachment"
+                    app:layout_constraintTop_toTopOf="@+id/attachment" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/img_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/enable_sharing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="Enable sharing"
+                android:textColor="@color/black80"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/attachment"
+                app:layout_constraintTop_toBottomOf="@+id/attachment" />
+
+            <Switch
+                android:id="@+id/share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/enable_sharing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/enable_sharing" />
+
+            <TextView
+                android:id="@+id/enable_convrstion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="Enable conversation"
+                android:textColor="@color/black80"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/enable_sharing"
+                app:layout_constraintTop_toBottomOf="@+id/enable_sharing" />
+
+            <Switch
+                android:id="@+id/conversation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="17dp"
+                android:text="              "
+                app:layout_constraintBottom_toBottomOf="@+id/enable_convrstion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/enable_convrstion" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/buttoncolor"
+                android:text="Update"
+                app:layout_constraintEnd_toEndOf="@+id/conversation"
+                app:layout_constraintStart_toStartOf="@+id/conversation"
+                app:layout_constraintTop_toBottomOf="@+id/enable_convrstion" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:behavior_peekHeight="0dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:behavior_hideable="false"
+            app:behavior_peekHeight="90dp"
+            app:layout_constraintBottom_toBottomOf="@+id/recycler_folder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="18dp"
+                android:text="Select Media Type "
+                android:textSize="18sp" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height=".5dp"
+                android:background="#5E5A5A" />
+
+            <TextView
+                android:id="@+id/txtImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Photo"
+                android:textColor="@color/colorAccent"
+                android:textSize="18dp"
+                android:visibility="visible" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height=".5dp"
+                android:background="#5E5A5A" />
+
+            <TextView
+                android:id="@+id/txtVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Video"
+                android:textColor="@color/colorAccent"
+                android:textSize="18dp"
+                android:visibility="visible" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height=".5dp"
+                android:background="#5E5A5A" />
+
+            <TextView
+                android:id="@+id/txtDoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Documents"
+                android:textColor="@color/colorAccent"
+                android:textSize="18dp"
+                android:visibility="visible" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height=".5dp"
+                android:background="#5E5A5A" />
+<!--textview for audio(Dinu)-->
+            <TextView
+                android:id="@+id/txtAudio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Audio"
+                android:textColor="@color/colorAccent"
+                android:textSize="18dp"
+                android:visibility="visible" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height=".5dp"
+                android:background="#5E5A5A" />
+            <TextView
+                android:id="@+id/txtCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Cancel"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height=".5dp"
+                android:background="#5E5A5A" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

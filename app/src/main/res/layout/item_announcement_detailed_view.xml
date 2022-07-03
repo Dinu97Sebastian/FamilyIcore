@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333335">
+
+    <ImageView
+        android:id="@+id/announcementThumb"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#efefef"
+        android:src="@drawable/album_default_image"
+        app:layout_constraintBottom_toBottomOf="@+id/postedDateTime"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/familyName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Winchester Family"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/announcementThumb"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/postedBy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Posted by Aswin"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/familyName"
+        app:layout_constraintTop_toBottomOf="@+id/familyName" />
+
+    <TextView
+        android:id="@+id/postedDateTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Nov 17, 2019 	4:30 pm"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/familyName"
+        app:layout_constraintTop_toBottomOf="@+id/postedBy" />
+
+    <ImageView
+        android:id="@+id/mediaSlider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postedDateTime"
+        tools:visibility="visible" />
+
+    <com.luseen.autolinklibrary.AutoLinkTextView
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/newConversationIndicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mediaSlider" />
+
+    <ImageView
+        android:id="@+id/conversationIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_post_conversation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/conversationCountIndicator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="150 Docs"
+        android:textSize="12dp"
+        android:textColor="#ffffff"
+
+        app:layout_constraintBottom_toBottomOf="@+id/conversationIcon"
+        app:layout_constraintEnd_toStartOf="@+id/documentsIndicator"
+        app:layout_constraintStart_toEndOf="@+id/conversationIcon"
+        app:layout_constraintTop_toTopOf="@+id/conversationIcon" />
+
+    <ImageView
+        android:id="@+id/newConversationIndicator"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@drawable/green_indicator"
+        app:layout_constraintEnd_toEndOf="@+id/conversationIcon"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/conversationIcon"
+        app:layout_constraintTop_toTopOf="@+id/conversationIcon" />
+
+    <ImageView
+        android:id="@+id/documentsIndicator"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/document_default_item"
+        app:layout_constraintBottom_toBottomOf="@+id/conversationIcon"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/attachmentCount"
+        app:layout_constraintTop_toTopOf="@+id/conversationIcon" />
+
+    <TextView
+        android:id="@+id/attachmentCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="150 Docs"
+        android:textSize="12dp"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/conversationCountIndicator"
+        app:layout_constraintEnd_toStartOf="@+id/moreOptions"
+        app:layout_constraintTop_toTopOf="@+id/conversationCountIndicator" />
+
+    <ImageView
+        android:id="@+id/moreOptions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/more_options_indicator_grey"
+        app:layout_constraintBottom_toBottomOf="@+id/attachmentCount"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/attachmentCount" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentScroller"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    tools:context=".Fragments.UserDetailsLevelOneFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/headerImage"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/get_started_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_corners_mask" />
+
+        <TextView
+            android:id="@+id/headerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Bit about you..."
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/headerImage"
+            app:layout_constraintEnd_toEndOf="@+id/headerImage"
+            app:layout_constraintStart_toStartOf="@+id/headerImage"
+            app:layout_constraintTop_toTopOf="@+id/headerImage" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/footer"
+            android:layout_width="0dp"
+            android:elevation="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="200dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/labelYourName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Your Name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_light_curved_light_grey"
+                    android:inputType="textPersonName|textCapSentences"
+                    app:layout_constraintEnd_toEndOf="@+id/labelYourName"
+                    app:layout_constraintStart_toStartOf="@+id/labelYourName"
+                    app:layout_constraintTop_toBottomOf="@+id/labelYourName" />
+
+                <TextView
+                    android:id="@+id/labelGender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Gender"
+                    app:layout_constraintEnd_toEndOf="@+id/name"
+                    app:layout_constraintStart_toStartOf="@+id/name"
+                    app:layout_constraintTop_toBottomOf="@+id/name" />
+
+                <ImageView
+                    android:id="@+id/genderMale"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/round_corners_mask"
+                    android:padding="16dp"
+                    android:src="@drawable/gender_male"
+                    app:layout_constraintEnd_toStartOf="@+id/genderFemale"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/labelGender" />
+
+                <TextView
+                    android:id="@+id/labelGenderMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    app:layout_constraintEnd_toEndOf="@+id/genderMale"
+                    app:layout_constraintStart_toStartOf="@+id/genderMale"
+                    app:layout_constraintTop_toBottomOf="@+id/genderMale" />
+
+                <ImageView
+                    android:id="@+id/genderFemale"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/round_corners_mask"
+                    android:padding="16dp"
+                    android:src="@drawable/gender_female"
+                    app:layout_constraintBottom_toBottomOf="@+id/genderMale"
+                    app:layout_constraintDimensionRatio="w,1:1"
+                    app:layout_constraintEnd_toStartOf="@+id/genderRatherNotSay"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/genderMale"
+                    app:layout_constraintTop_toTopOf="@+id/genderMale" />
+
+
+                <TextView
+                    android:id="@+id/labelGenderFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    app:layout_constraintEnd_toEndOf="@+id/genderFemale"
+                    app:layout_constraintStart_toStartOf="@+id/genderFemale"
+                    app:layout_constraintTop_toBottomOf="@+id/genderFemale" />
+
+                <ImageView
+                    android:id="@+id/genderRatherNotSay"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/round_corners_mask"
+                    android:padding="16dp"
+                    android:src="@drawable/gender_rather_not_say"
+                    app:layout_constraintBottom_toBottomOf="@+id/genderFemale"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/genderFemale"
+                    app:layout_constraintTop_toTopOf="@+id/genderFemale" />
+
+                <ImageView
+                    android:id="@+id/genderRatherNotSaySelected"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_gender_selected"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toTopOf="@+id/genderRatherNotSay"
+                    app:layout_constraintEnd_toEndOf="@+id/genderRatherNotSay"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/genderRatherNotSay"
+                    app:layout_constraintTop_toTopOf="@+id/genderRatherNotSay"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/labelGenderRatherNotSay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not Specified"
+                    app:layout_constraintEnd_toEndOf="@+id/genderRatherNotSay"
+                    app:layout_constraintStart_toStartOf="@+id/genderRatherNotSay"
+                    app:layout_constraintTop_toBottomOf="@+id/genderRatherNotSay" />
+
+                <ImageView
+                    android:id="@+id/genderMaleSelected"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_gender_selected"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toTopOf="@+id/genderMale"
+                    app:layout_constraintEnd_toEndOf="@+id/genderMale"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/genderMale"
+                    app:layout_constraintTop_toTopOf="@+id/genderMale"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/genderFemaleSelected"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_gender_selected"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toTopOf="@+id/genderFemale"
+                    app:layout_constraintEnd_toEndOf="@+id/genderFemale"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/genderFemale"
+                    app:layout_constraintTop_toTopOf="@+id/genderFemale"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/labelEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/labelGenderMale" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_light_curved_light_grey"
+                    android:inputType="textEmailAddress"
+                    app:layout_constraintEnd_toEndOf="@+id/labelYourName"
+                    app:layout_constraintStart_toStartOf="@+id/labelYourName"
+                    app:layout_constraintTop_toBottomOf="@+id/labelEmail" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/next"
+                    style="@style/CustomButtonWithNextIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:backgroundTint="@color/purpleText"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:text="Next"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    app:backgroundTint="@color/purpleText"
+                    app:cornerRadius="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/email"
+                    tools:targetApi="lollipop" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

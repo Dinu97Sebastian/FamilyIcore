@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootCoordinate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:fitsSystemWindows="false"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        android:background="@color/white"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"
+            app:contentScrim="@android:color/transparent"
+            app:expandedTitleMarginEnd="56dp"
+            app:expandedTitleMarginStart="40dp"
+            app:title="">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dip"
+                    android:layout_weight=".6"
+                    android:orientation="horizontal" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="#f7f8fa"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/labelConfirmNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sign Up"
+                            android:textSize="27sp"
+                            android:fontFamily="@font/sf_ui_display_bold"
+                            android:textColor="@color/labelColor1_5"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/labelDescription"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:text="Select your primary phone number \nto verify your account."
+                            android:textColor="@color/labelColor1_5"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+
+
+                        <EditText
+                            android:id="@+id/countrySelector"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:ellipsize="end"
+                            android:layout_marginTop="15dp"
+                            android:hint="Select Country"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/label"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="@id/guideline4"
+                            app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+
+                        <ImageView
+                            android:id="@+id/arrowDown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/arrow_down_grey"
+                            app:layout_constraintBottom_toBottomOf="@+id/countrySelector"
+                            app:layout_constraintStart_toEndOf="@+id/countrySelector" />
+                        <LinearLayout
+                            android:id="@+id/phoneLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:gravity="center"
+                            android:background="@drawable/background_light_curved_light_grey"
+                            app:layout_constraintStart_toStartOf="@id/guideline4"
+                            app:layout_constraintEnd_toEndOf="@+id/guideline7"
+                            app:layout_constraintTop_toTopOf="@+id/countrySelector"
+                            >
+                            <ImageView
+                                android:id="@+id/countryFlag"
+                                android:layout_width="wrap_content"
+                                android:background="@null"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/flag_india"
+                                android:layout_height="wrap_content"/>
+                            <EditText
+                                android:id="@+id/countryCode"
+                                android:layout_width="wrap_content"
+                                android:background="@null"
+                                android:text="(+91)"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="25sp"
+                                android:inputType="number"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:clickable="false"
+                                android:textStyle="bold"
+                                android:layout_height="wrap_content"/>
+                            <EditText
+                                android:id="@+id/phone"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:textColor="@color/black"
+                                android:textSize="25sp"
+                                android:maxLength="13"
+                                android:inputType="numberDecimal"
+                                android:digits="0123456789"
+                                android:textStyle="bold"
+                                />
+
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/labelIsExisting"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:text="User not found! Try Again"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@id/guideline4"
+                            app:layout_constraintEnd_toEndOf="@+id/guideline7"
+                            app:layout_constraintTop_toBottomOf="@+id/phoneLayout"
+
+                            />
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_begin="16dp" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_end="16dp" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_begin="40dp" />
+
+                        <Button
+                            android:id="@+id/continu"
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="0.2"
+                            android:text="Continue"
+                            android:textAllCaps="false"
+                            android:enabled="false"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                            app:layout_constraintStart_toStartOf="@+id/guideline4"
+                            app:layout_constraintTop_toBottomOf="@+id/termsAndConditions"
+                            app:layout_constraintVertical_bias="0.5" />
+
+                        <TextView
+                            android:id="@+id/disclaimer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="50dp"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:textColor="#848E99"
+                            android:textSize="13sp"
+                            android:text="@string/disclaimer"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                            app:layout_constraintStart_toStartOf="@+id/guideline4"
+                            app:layout_constraintTop_toBottomOf="@+id/phoneLayout"
+                            app:layout_constraintBottom_toBottomOf="@+id/termsAndConditions"
+                            />
+                        <com.luseen.autolinklibrary.AutoLinkTextView
+                            android:id="@+id/termsAndConditions"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:textColor="#848E99"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                            app:layout_constraintStart_toStartOf="@+id/guideline4"
+                            app:layout_constraintTop_toBottomOf="@+id/disclaimer"
+                            app:layout_constraintBottom_toBottomOf="@+id/continu"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/back"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="16dp"
+                        android:visibility="visible"
+                        android:src="@drawable/icon_navigation_back_black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="h,1:1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

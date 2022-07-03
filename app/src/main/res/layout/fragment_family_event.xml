@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:animateLayoutChanges="true"
+    tools:context=".Fragments.FamilyDashboard.FamilyEventFragment">
+
+    <EditText
+        android:id="@+id/searchMyFamilies"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/edittext_curve_box"
+        android:drawableStart="@drawable/icon_search_gray"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="@string/search"
+        android:imeOptions="actionSearch"
+        android:importantForAutofill="yes"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        android:paddingEnd="32dp"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/goToCalendar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill" />
+
+    <ImageView
+        android:id="@+id/clearSearch"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/places_ic_clear"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/searchMyFamilies"
+        app:layout_constraintEnd_toEndOf="@+id/searchMyFamilies"
+        app:layout_constraintTop_toTopOf="@+id/searchMyFamilies" />
+
+    <ImageView
+        android:id="@+id/goToCalendar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:padding="2dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:src="@drawable/icon_calendar"
+        app:layout_constraintBottom_toBottomOf="@+id/searchMyFamilies"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchMyFamilies" />
+    <ProgressBar
+        android:id="@+id/progressListMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/eventList"
+        app:layout_constraintEnd_toEndOf="@id/eventList"
+        app:layout_constraintStart_toStartOf="@id/eventList"
+        app:layout_constraintTop_toTopOf="@+id/eventList" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/eventList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/appBg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchMyFamilies" />
+
+
+
+    <include
+        android:id="@+id/emptyIndicatorContainer"
+        layout="@layout/item_empty_family_events"
+        android:visibility="gone" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/createEvent"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/darkViolet"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
+        android:src="@drawable/add"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+        <ImageView
+            android:layout_width="match_parent"
+            android:src="@drawable/add"
+            android:padding="8dp"
+            android:backgroundTint="@color/white"
+            app:tint="@color/white"
+            android:layout_height="match_parent">
+
+        </ImageView>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

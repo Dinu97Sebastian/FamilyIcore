@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navigationHome"
+        android:icon="@drawable/nav_feed"
+        android:title="Home"
+        android:visible="true"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/navigationProfile"
+        android:icon="@drawable/nav_my_families"
+        android:title="My Family"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/navigationAdd"
+        android:icon="@drawable/nav_create"
+        android:title="New"
+        android:visible="true"
+        android:transitionName="@string/transition_fab"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/navigationSearch"
+        android:icon="@drawable/nav_discover"
+        android:title="Discover"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/navigationCalendar"
+        android:icon="@drawable/nav_events"
+        android:title="Events"
+        app:showAsAction="always" />
+</menu>

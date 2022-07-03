@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditHistoryActivity">
+
+    <include
+        android:id="@+id/toolbarIncluderLayout"
+        layout="@layout/item_toolbar_normal_no_notif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/labelEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="History"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/toolbarIncluderLayout"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edit_history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/background_light_curved_light_grey"
+        android:gravity="top|left"
+        android:lines="10"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelEdit" />
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/labelPhoto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Attach Photos"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/edit_history"
+        android:textStyle="bold"/>
+    <ImageView
+        android:id="@+id/attachment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_edittext"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="@+id/labelPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/labelPhoto"
+        app:srcCompat="@drawable/attachment_black" />
+
+    <TextView
+        android:id="@+id/no_files"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="No files attached"
+        app:layout_constraintBottom_toBottomOf="@+id/attachment"
+        app:layout_constraintStart_toEndOf="@+id/attachment"
+        app:layout_constraintTop_toTopOf="@+id/attachment" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/image_list"
+        app:layout_constraintStart_toStartOf="@+id/attachment"
+        app:layout_constraintTop_toBottomOf="@+id/attachment"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_post"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/buttoncolor"
+        android:text="Done"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/image_list" />
+</androidx.constraintlayout.widget.ConstraintLayout>

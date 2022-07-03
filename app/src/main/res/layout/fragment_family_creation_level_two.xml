@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:clickable="true"
+    android:fillViewport="true"
+    android:focusableInTouchMode="true"
+    tools:context=".Fragments.FamilyCreationLevelTwoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/labelFamily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Family"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelIntroduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Introduction"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/labelFamily"
+            app:layout_constraintStart_toEndOf="@+id/labelFamily"
+            app:layout_constraintTop_toTopOf="@+id/labelFamily" />
+
+        <TextView
+            android:id="@+id/labelIntro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/roboto"
+            android:text="A little bit about your family"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/labelFamily"
+            app:layout_constraintTop_toBottomOf="@+id/labelFamily" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/familyIntroContainer"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            app:counterMaxLength="250"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelIntro">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/familyIntro"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|left"
+                android:inputType="textCapSentences|textMultiLine"
+                android:minHeight="200dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView53"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="250 Characters max."
+            android:textColor="@color/label"
+            android:textSize="15sp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/familyIntroContainer"
+            app:layout_constraintTop_toBottomOf="@+id/familyIntroContainer">
+
+        </TextView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/proceed"
+            style="@style/CustomButtonWithNextIcon"
+            android:layout_width="@dimen/family_creation_buttonwidth"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="163dp"
+            android:layout_marginEnd="16dp"
+            android:text="Continue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView53" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

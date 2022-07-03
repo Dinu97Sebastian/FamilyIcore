@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbarContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#80000000"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:gravity="center"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"></androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/bellIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="@dimen/toolbarBellIconPadding"
+            android:src="@drawable/bell_icon"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.nex3z.notificationbadge.NotificationBadge
+            android:id="@+id/bellNotificationCount"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
+            android:textSize="9sp"
+            app:layout_constraintEnd_toEndOf="@+id/toolBarTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:nbAnimationEnabled="true"
+            app:nbBackground="@drawable/notification_count_background"
+            app:nbMaxTextLength="4" />
+
+        <TextView
+            android:id="@+id/toolBarTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:scaleType="centerInside"
+            android:src="@drawable/logo_familheey"
+            android:textColor="#343a40"
+            android:textSize="@dimen/toolbarTitleTextSize"
+            app:layout_constraintEnd_toStartOf="@+id/bellIcon"
+            app:layout_constraintStart_toEndOf="@+id/goBack" />
+
+        <ImageView
+            android:id="@+id/goBack"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:padding="@dimen/toolbarBackButtonPadding"
+            android:src="@drawable/icon_navigation_back_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

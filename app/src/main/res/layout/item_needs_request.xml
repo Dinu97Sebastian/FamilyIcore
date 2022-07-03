@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingTop="12dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:id="@+id/userProfileImage"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/avatar_male"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="People Name"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/moreOptions"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/userProfileImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/moreOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:src="@drawable/ic_more"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/postedIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Trivandrum"
+            android:textSize="12sp"
+            android:textColor="#323a42"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/postedTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="14:20 PM"
+            android:textColor="#84878b"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/postedIn"
+            app:layout_constraintStart_toStartOf="@+id/postedIn"
+            app:layout_constraintTop_toBottomOf="@+id/postedIn" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/needsList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/postedIn"
+            app:layout_constraintStart_toStartOf="@+id/userProfileImage"
+            app:layout_constraintTop_toBottomOf="@+id/postedTime"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_needs" />
+
+        <ImageView
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/ash"
+            app:layout_constraintEnd_toEndOf="@+id/needsList"
+            app:layout_constraintStart_toStartOf="@+id/needsList"
+            app:layout_constraintTop_toBottomOf="@+id/needsList" />
+
+        <ImageView
+            android:id="@+id/requestedTimeIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_access_time_black_24dp"
+            app:layout_constraintStart_toStartOf="@+id/needsList"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <TextView
+            android:id="@+id/requestedTime"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="#6c6775"
+            android:text="11:00 am - 3:00 pm"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/requestedTimeIcon"
+            app:layout_constraintEnd_toStartOf="@+id/barrier"
+            app:layout_constraintStart_toEndOf="@+id/requestedTimeIcon" />
+
+        <ImageView
+            android:id="@+id/requestedLocationIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:drawableTint="@color/quantum_grey500"
+            android:padding="3dp"
+            android:src="@drawable/ic_event_location"
+            app:layout_constraintStart_toStartOf="@+id/requestedTimeIcon"
+            app:layout_constraintTop_toBottomOf="@+id/requestedTimeIcon" />
+
+        <TextView
+            android:id="@+id/requestedLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:drawableTint="#524d5c"
+            android:text="Hotel Fairmont, Dallas TX"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/requestedTime"
+            app:layout_constraintStart_toStartOf="@+id/requestedTime"
+            app:layout_constraintTop_toBottomOf="@+id/requestedTime" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="start"
+            app:constraint_referenced_ids="supportersCount,labelSupporters"
+            tools:layout_editor_absoluteX="379dp"
+            tools:layout_editor_absoluteY="12dp" />
+
+        <TextView
+            android:id="@+id/supportersCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:textColor="#242424"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/labelSupporters"
+            app:layout_constraintEnd_toEndOf="@+id/labelSupporters"
+            app:layout_constraintStart_toStartOf="@+id/labelSupporters" />
+
+        <TextView
+            android:id="@+id/labelSupporters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Supporters"
+            android:textColor="#bababa"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/requestedLocation"
+            app:layout_constraintEnd_toEndOf="@+id/needsList" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
